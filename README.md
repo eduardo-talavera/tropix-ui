@@ -4,7 +4,7 @@
         max-width="350px"
         width="350px"
         alt="Tropix UI is a colorful and vibrant design system built with React, Typescript, Emotion styles, and Vite."
-        src="https://raw.githubusercontent.com/eduardo-talavera/moka-ui/main/public/tropix_ui_logo.png"
+        src="https://raw.githubusercontent.com/eduardo-talavera/tropix-ui/main/public/tropix_ui_logo.png"
     >
 </p>
 
@@ -16,7 +16,7 @@ Tropix UI is a colorful and vibrant design system built with React, Typescript, 
 install the package
 
 ```shell
-npm i moka-ui
+npm i tropix-ui
 ```
 
 
@@ -25,7 +25,7 @@ import the provider into your root file
 ```jsx
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ThemeProvider } from 'moka-ui'
+import { ThemeProvider } from 'tropix-ui'
 
 
 createRoot(document.getElementById('root')!).render(
@@ -42,8 +42,7 @@ createRoot(document.getElementById('root')!).render(
 use your desired component into your application
 
 ```jsx
-import { useState } from 'react'
-import { Button } from 'moka-ui'
+import { Button } from 'tropix-ui'
 
 export const App = () => {
 
@@ -58,8 +57,7 @@ export const App = () => {
 Use the useThemeMode hook with the Toggle component to switch between light and dark mode.
 
 ```jsx
-import { useState } from 'react'
-import { Toggle, Button, useThemeMode } from 'moka-ui'
+import { Toggle, Button, useThemeMode } from 'tropix-ui'
 
 export const App = () => {
     const { toggleTheme } = useThemeMode()
