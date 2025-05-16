@@ -7,13 +7,13 @@ type BaseColor = 'jungleGreen' | 'cobaltBlue' | 'poppy' | 'sunGlow'
 export const getBtnVariantStyles = (theme: Theme, isDark: boolean, outline: boolean) => {
 
   const colorVariants: Record<BaseColor, number> = {
-    cobaltBlue: isDark ? 0 : 2,
-    jungleGreen: isDark ? 0 : 1,
+    cobaltBlue: isDark ? 16 : 2,
+    jungleGreen: isDark ? 16 : 1,
     sunGlow: isDark ? 16 : 15,
-    poppy: isDark ? 0 : 1
+    poppy: isDark ? 16 : 1
   };
 
-  const commonScaleColor = isDark ? 7 : 10
+  const commonScaleColor = isDark ? 8 : 10
 
   const getVariantByOutline = (baseColor: BaseColor) => outline ? (
       {
@@ -39,32 +39,32 @@ export const getBtnVariantStyles = (theme: Theme, isDark: boolean, outline: bool
     primary: css({
          ...(getVariantByOutline('cobaltBlue')),
          ['&:hover']: {
-            background: theme.colors.cobaltBlue[isDark ? 9 : 12],
-            border: `2px solid ${theme.colors.cobaltBlue[isDark ? 9 : 12]}`,
+            background: theme.colors.cobaltBlue[isDark ? 6 : 12],
+            border: `2px solid ${theme.colors.cobaltBlue[isDark ? 7 : 12]}`,
              ...(getTextColorVariantByHover('cobaltBlue'))
          }
     }),
     success: css({
           ...(getVariantByOutline('jungleGreen')),
          ['&:hover']: {
-            background: theme.colors.jungleGreen[isDark ? 10 : 12],
-            border: `2px solid ${theme.colors.jungleGreen[isDark ? 9 : 12]}`,
+            background: theme.colors.jungleGreen[isDark ? 6 : 12],
+            border: `2px solid ${theme.colors.jungleGreen[isDark ? 6 : 12]}`,
             ...(getTextColorVariantByHover('jungleGreen'))
          }
     }),
     warning: css({
           ...(getVariantByOutline('sunGlow')),
          ['&:hover']: {
-            background: theme.colors.sunGlow[isDark ? 9 : 11],
-            border: `2px solid ${theme.colors.sunGlow[isDark ? 9 : 11]}`,
+            background: theme.colors.sunGlow[isDark ? 6 : 11],
+            border: `2px solid ${theme.colors.sunGlow[isDark ? 6 : 11]}`,
             ...(getTextColorVariantByHover('sunGlow'))
          }
     }),
     danger: css({
           ...(getVariantByOutline('poppy')),
          ['&:hover']: {
-            background: theme.colors.poppy[isDark ? 9 : 11],
-            border: `2px solid ${theme.colors.poppy[isDark ? 9 : 11]}`,
+            background: theme.colors.poppy[isDark ? 6 : 11],
+            border: `2px solid ${theme.colors.poppy[isDark ? 6 : 11]}`,
             ...(getTextColorVariantByHover('poppy'))
          }
     }),
@@ -145,5 +145,5 @@ export const buttonStyles = (theme: Theme, size: ButtonSizes) => css({
     borderRadius: '0.2rem',
     cursor: 'pointer',
     textTransform: 'uppercase',
-    transition: 'all 0.25s ease'
+    transition: 'all 0.15s ease'
 })

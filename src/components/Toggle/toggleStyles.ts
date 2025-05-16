@@ -3,7 +3,10 @@ import { css } from "@emotion/react";
 import { ToggleSizes, type ToggleVariants } from "./Toggle";
 
 const getBackgroundImage = (toggled: boolean) => ( 
-    { backgroundImage: `url(../../public/${toggled ? 'noche' : 'dia'}.png)`} 
+    { 
+        backgroundImage: `url(https://res.cloudinary.com/do58bq7uo/image/upload/${toggled 
+            ? 'v1747394564/fzhxph4wpdt4dyhv6kd4' : 'p2dpctjsyo4oucfbfouw'}.png)`
+    } 
 )
    
 const getThumbColor = (isThemeSwitch: boolean, toggled: boolean) => {
@@ -54,25 +57,25 @@ const toggleLefts = {
 
 
 export const toggleStyles = 
-(theme: Theme, variant: ToggleVariants, toggled: boolean, isThemeSwitch: boolean, size: ToggleSizes, disabled: boolean) => ({
+(theme: Theme, variant: ToggleVariants, toggled: boolean, isThemeSwitch: boolean, size: ToggleSizes, disabled: boolean, isDark: boolean) => ({
     toggleBtn: css({
         ...(isThemeSwitch ? getBackgroundImage(toggled) : { backgroundColor: theme.colors.jet[3] }),
         backgroundSize: 'cover',
-        border: '1px solid #aaa',
         borderRadius: '99px',
         ...(togleSizes[size]),
         transition: 'background-color 0.1s ease, border-color 0.2s ease',
         cursor: disabled ? 'not-allowed' : 'pointer',
-        boxShadow: '1px 1px 2px rgba(0, 0, 0, 0.748)',
+        boxShadow: (isThemeSwitch && isDark) ? '-7px 1px 41px -5px white' : undefined,
+        borderWidth: 0,
         position: 'relative',
          ['&:hover']: {
             backgroundColor: '#6f6f6f'
         }
     }),
     toggled: css({
-        backgroundColor: disabled ? theme.colors.jet[3] : theme.colors[variant][8],
+        backgroundColor: disabled ? theme.colors.jet[3] : theme.colors[variant][10],
          ['&:hover']: {
-            backgroundColor: disabled ? theme.colors.jet[3] : theme.colors[variant][10]
+            backgroundColor: disabled ? theme.colors.jet[3] : theme.colors[variant][12]
         }
     }),
     thumb: css({

@@ -79,7 +79,7 @@ const AppContent = ({ children }) => {
   return (
     <div css={styles.container}>
       <header css={styles.header}>
-        <h1 css={styles.text}>Moka UI</h1>
+        <h1 css={styles.text}>Tropix UI</h1>
         <ThemeToggleButton />
       </header>
       <div css={styles.childrenWrapper}>
