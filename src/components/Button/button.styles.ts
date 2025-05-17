@@ -39,42 +39,41 @@ export const getBtnVariantStyles = (theme: Theme, isDark: boolean, outline: bool
     primary: css({
          ...(getVariantByOutline('cobaltBlue')),
          ['&:hover']: {
-            background: theme.colors.cobaltBlue[isDark ? 6 : 12],
-            border: `2px solid ${theme.colors.cobaltBlue[isDark ? 7 : 12]}`,
+            background: theme.colors.cobaltBlue[isDark ? 10 : 12],
+            border: `2px solid ${theme.colors.cobaltBlue[isDark ? 10 : 12]}`,
              ...(getTextColorVariantByHover('cobaltBlue'))
          }
     }),
     success: css({
           ...(getVariantByOutline('jungleGreen')),
          ['&:hover']: {
-            background: theme.colors.jungleGreen[isDark ? 6 : 12],
-            border: `2px solid ${theme.colors.jungleGreen[isDark ? 6 : 12]}`,
+            background: theme.colors.jungleGreen[isDark ? 11 : 12],
+            border: `2px solid ${theme.colors.jungleGreen[isDark ? 11 : 12]}`,
             ...(getTextColorVariantByHover('jungleGreen'))
          }
     }),
     warning: css({
           ...(getVariantByOutline('sunGlow')),
          ['&:hover']: {
-            background: theme.colors.sunGlow[isDark ? 6 : 11],
-            border: `2px solid ${theme.colors.sunGlow[isDark ? 6 : 11]}`,
+            background: theme.colors.sunGlow[isDark ? 11 : 11],
+            border: `2px solid ${theme.colors.sunGlow[isDark ? 11 : 11]}`,
             ...(getTextColorVariantByHover('sunGlow'))
          }
     }),
     danger: css({
           ...(getVariantByOutline('poppy')),
          ['&:hover']: {
-            background: theme.colors.poppy[isDark ? 6 : 11],
-            border: `2px solid ${theme.colors.poppy[isDark ? 6 : 11]}`,
+            background: theme.colors.poppy[isDark ? 10 : 11],
+            border: `2px solid ${theme.colors.poppy[isDark ? 10 : 11]}`,
             ...(getTextColorVariantByHover('poppy'))
          }
     }),
     ghost: css({
-        background: 'transparent',
-        border: `2px solid ${theme.colors.jungleGreen[0]}`,
-        color: theme.colors.jungleGreen[6],
+        backgroundColor: 'transparent',
+        color: theme.colors.jungleGreen[10],
+        borderWidth: 0,
         ['&:hover']: {
-            background: theme.colors.jungleGreen[0],
-            border: `1px solid ${theme.colors.jungleGreen[6]}`
+            backgroundColor: isDark ? '#83d3be45' : theme.colors.jungleGreen[1],
         }
     })
 })
@@ -132,16 +131,17 @@ export const getDisabledStyles = (outline: boolean, theme: Theme) =>
 
 export const buttonStyles = (theme: Theme, size: ButtonSizes) => css({
     boxSizing: 'border-box',
-    color: theme.colors.text,
     width: getSizesHelper(size).width,
     height: getSizesHelper(size).height,
+    borderWidth: 0,
+    borderBlockColor: 'inherit',
+    outline: 'none',
     padding: '0.5rem 1rem',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     fontFamily: theme.fonts.base,
     fontWeight: 'bold',
-    border: `1px solid ${theme.colors.jungleGreen[0]}`,
     borderRadius: '0.2rem',
     cursor: 'pointer',
     textTransform: 'uppercase',
