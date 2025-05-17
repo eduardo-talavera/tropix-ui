@@ -2,7 +2,6 @@
 import { useTheme } from "@emotion/react"
 import { FC, forwardRef, HTMLAttributes, useEffect, useState } from "react"
 import { toggleStyles } from "./toggleStyles"
-import { useThemeMode } from "../../main"
 
 interface ToggleProps extends HTMLAttributes<HTMLDivElement> {
     onPress: (tooggled: boolean) => void
@@ -28,8 +27,7 @@ export const Toggle: FC<ToggleProps> = forwardRef<HTMLDivElement, ToggleProps>
  }
 
  const theme = useTheme()
-  const { isDark } = useThemeMode()
- const styles = toggleStyles(theme, variant, toggled, isThemeSwitch, size, disabled, isDark)
+ const styles = toggleStyles({ theme, variant, toggled, isThemeSwitch, size, disabled })
 
  useEffect(() => {
   setToggled(isToggled)

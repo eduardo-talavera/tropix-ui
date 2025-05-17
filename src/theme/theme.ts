@@ -33,7 +33,7 @@ export const darkTheme = {
     name: 'dark',
     colors: {
       ...palette,
-      background: '#040e20',
+      background: '#1e1d1d',
       text: '#fff'
     },
     paddings: {

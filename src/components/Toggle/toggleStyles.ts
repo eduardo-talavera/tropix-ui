@@ -2,6 +2,15 @@ import { Theme } from "@emotion/react";
 import { css } from "@emotion/react";
 import { ToggleSizes, type ToggleVariants } from "./Toggle";
 
+type ToggleStylesArgs = {
+  theme: Theme;
+  variant: ToggleVariants;
+  toggled: boolean;
+  isThemeSwitch: boolean;
+  size: ToggleSizes;
+  disabled: boolean;
+}
+
 const getBackgroundImage = (toggled: boolean) => ( 
     { 
         backgroundImage: `url(https://res.cloudinary.com/do58bq7uo/image/upload/${toggled 
@@ -55,9 +64,7 @@ const toggleLefts = {
     lg: 'calc(50px - 13px)'
 }
 
-
-export const toggleStyles = 
-(theme: Theme, variant: ToggleVariants, toggled: boolean, isThemeSwitch: boolean, size: ToggleSizes, disabled: boolean, isDark: boolean) => ({
+export const toggleStyles = ({ theme, variant, toggled, isThemeSwitch, size, disabled }: ToggleStylesArgs) => ({
     toggleBtn: css({
         ...(isThemeSwitch ? getBackgroundImage(toggled) : { backgroundColor: theme.colors.jet[3] }),
         backgroundSize: 'cover',
@@ -65,7 +72,6 @@ export const toggleStyles =
         ...(togleSizes[size]),
         transition: 'background-color 0.1s ease, border-color 0.2s ease',
         cursor: disabled ? 'not-allowed' : 'pointer',
-        boxShadow: (isThemeSwitch && isDark) ? '-7px 1px 41px -5px white' : undefined,
         borderWidth: 0,
         position: 'relative',
          ['&:hover']: {
