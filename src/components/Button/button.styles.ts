@@ -79,34 +79,23 @@ export const getBtnVariantStyles = (theme: Theme, isDark: boolean, outline: bool
 })
 }
 
-const getSizesHelper = (size: ButtonSizes) => {
-   switch (size) {
-    case 'sm':
-      return {
-        width: '150px',
-        height: '40px'
-      }  
-    case 'md':
-      return {
-        width: '200px',
-        height: '50px'
-      }  
-    case 'lg':
-      return {
-        width: '250px',
-        height: '60px'
-      }  
-    case 'full':
-      return {
-        width: '100%',
-        height: '60px'
-      }    
-    default:
-        return {
-            width: '200px',
-            height: '50px'
-        }
-   }
+const buttonSizes = {
+  sm: {
+    width: '150px',
+    height: '40px'
+  },
+  md: {
+    width: '200px',
+    height: '50px'
+  },
+  lg: {
+    width: '250px',
+    height: '60px'
+  },
+  full: {
+    width: '100%',
+    height: '60px'
+  }
 }
 
 export const getDisabledStyles = (outline: boolean, theme: Theme) => 
@@ -131,10 +120,9 @@ export const getDisabledStyles = (outline: boolean, theme: Theme) =>
 
 export const buttonStyles = (theme: Theme, size: ButtonSizes) => css({
     boxSizing: 'border-box',
-    width: getSizesHelper(size).width,
-    height: getSizesHelper(size).height,
+    width: buttonSizes[size].width,
+    height: buttonSizes[size].height,
     borderWidth: 0,
-    borderBlockColor: 'inherit',
     outline: 'none',
     padding: '0.5rem 1rem',
     display: 'flex',
