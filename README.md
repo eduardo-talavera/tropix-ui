@@ -4,7 +4,7 @@
         max-width="350px"
         width="350px"
         alt="Tropix UI is a colorful and vibrant design system built with React, Typescript, Emotion styles, and Vite."
-        src="https://raw.githubusercontent.com/eduardo-talavera/tropix-ui/main/static/tropix-iguana-logo.png"
+        src="https://raw.githubusercontent.com/eduardo-talavera/tropix-ui/main/static/tropix_ui_logo.png"
     >
 </p>
 
