@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/eduardo-talavera/tropix-ui/compare/v1.1.0...v1.1.1) (2025-05-19)
+
+
+### Bug Fixes
+
+* **package.json, release.yml:** add mising args ([53350db](https://github.com/eduardo-talavera/tropix-ui/commit/53350db3312129ba5fd77f83a8e4ba7e79c52407))
+* **package.json:** remove pkgRoot arg ([093968c](https://github.com/eduardo-talavera/tropix-ui/commit/093968c950644275b4f8ad3d48c626faafca7393))
+* **release.yml:** fix build step ([b3640c5](https://github.com/eduardo-talavera/tropix-ui/commit/b3640c5eb54d535f4a6d47c93927cee53da62aee))
+
 # [1.1.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.0.3...v1.1.0) (2025-05-19)
 
 
