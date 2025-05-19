@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.2.0...v1.3.0) (2025-05-19)
+
+
+### Features
+
+* **themecontext:** change default color mode to dark ([e3d98b2](https://github.com/eduardo-talavera/tropix-ui/commit/e3d98b288bd80ff4653d859a75424e04e414439e))
+
 # [1.2.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.1.1...v1.2.0) (2025-05-19)
 
 
