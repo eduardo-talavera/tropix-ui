@@ -29,12 +29,7 @@
           "changelogFile": "CHANGELOG.md"
         }
       ],
-      [
-        "@semantic-release/npm",
-        {
-           "pkgRoot": "dist"
-        }
-      ],
+      "@semantic-release/npm",
       "@semantic-release/github",
       [
         "@semantic-release/git",
@@ -93,7 +88,7 @@
     "playwright": "^1.52.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "semantic-release": "^24.2.4",
+    "semantic-release": "^24.2.3",
     "storybook": "^8.6.12",
     "ts-jest": "^29.3.3",
     "typescript": "~5.8.3",
