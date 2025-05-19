@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.0.3...v1.1.0) (2025-05-19)
+
+
+### Bug Fixes
+
+* **package.json:** fix merge conflicts ([7b33f76](https://github.com/eduardo-talavera/tropix-ui/commit/7b33f7613290ea28863d8042529dfb26df705373))
+
+
+### Features
+
+* **button:** update Button Component ([8f36516](https://github.com/eduardo-talavera/tropix-ui/commit/8f365162463efb29b530e47010d2bb226892674f))
+
 # 1.0.0 (2025-05-17)
 
 
