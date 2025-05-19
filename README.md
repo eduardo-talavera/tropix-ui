@@ -22,7 +22,7 @@ npm i tropix-ui
 
 import the provider into your root file
 
-```jsx
+```jsx title="src/main.js"
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { ThemeProvider } from 'tropix-ui'
@@ -40,8 +40,7 @@ createRoot(document.getElementById('root')!).render(
 
 
 use your desired component into your application
-
-```jsx
+```jsx title="src/App.jsx"
 import { Button } from 'tropix-ui'
 
 export const App = () => {
