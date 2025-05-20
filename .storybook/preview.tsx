@@ -49,8 +49,8 @@ const generatePreviewStyles = (theme: Theme, isDocs: boolean) => ({
 })
 
 const ThemeToggleButton = () => {
-  const { toggleTheme } = useThemeMode();
-  return <Toggle onPress={() => toggleTheme()} isThemeSwitch />
+  const { setIsDark } = useThemeMode();
+  return <Toggle onPress={(toggled) => setIsDark(toggled)} isThemeSwitch />
 }
 
 const AppContent = ({ children }) => {

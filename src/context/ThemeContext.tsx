@@ -7,12 +7,14 @@ interface ThemeContextType {
   theme: Theme;
   toggleTheme: () => void;
   isDark: boolean;
+  setIsDark: (dark: boolean) => void
 }
 
 const ThemeContext = createContext<ThemeContextType>({
   theme: lightTheme,
   toggleTheme: () => {},
   isDark: false,
+  setIsDark: () => {}
 });
 
 export const useThemeMode = () => useContext(ThemeContext);
@@ -36,7 +38,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   }, [isDark]);
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, isDark }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, isDark, setIsDark }}>
       <EmotionThemeProvider theme={theme}>
         {children}
       </EmotionThemeProvider>
