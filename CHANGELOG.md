@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.3.0...v1.4.0) (2025-05-19)
+
+
+### Features
+
+* **themecontext:** change default theme mode to light ([167b23d](https://github.com/eduardo-talavera/tropix-ui/commit/167b23dfcfabcf93472c1e27fadab14f95004b0c))
+
 # [1.3.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.2.0...v1.3.0) (2025-05-19)
 
 
