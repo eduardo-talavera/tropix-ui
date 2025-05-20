@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.4.0...v1.5.0) (2025-05-20)
+
+
+### Features
+
+* **themecontext:** add setIsDark function ([87ca0d9](https://github.com/eduardo-talavera/tropix-ui/commit/87ca0d98888d10c944fe063dc000606a9241b37c))
+
 # [1.4.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.3.0...v1.4.0) (2025-05-19)
 
 
