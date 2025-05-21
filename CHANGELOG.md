@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/eduardo-talavera/tropix-ui/compare/v1.6.0...v1.6.1) (2025-05-21)
+
+
+### Bug Fixes
+
+* **themecontext:** restore match media color mode prefers ([d0008f6](https://github.com/eduardo-talavera/tropix-ui/commit/d0008f6477cb180408229bcd43ea7225830adbec))
+
 # [1.6.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.5.0...v1.6.0) (2025-05-20)
 
 
