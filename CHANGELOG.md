@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.5.0...v1.6.0) (2025-05-20)
+
+
+### Features
+
+* **theme ccontext:** remove window match media ([47fdb8c](https://github.com/eduardo-talavera/tropix-ui/commit/47fdb8c5c2cc97a829bf4b3a77bfd7c185431dab))
+
 # [1.5.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.4.0...v1.5.0) (2025-05-20)
 
 
