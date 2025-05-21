@@ -70,6 +70,8 @@ export const App = () => {
 ```
 
 
-documentation in process...
+## Documentation
+
+Visit [Tropix Ui Docs](https://tropix-ui-docs.vercel.app/docs/intro/).
 
 
