@@ -32,6 +32,7 @@ const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>
         rounded && { borderRadius: '3rem' },
         disabled && getDisabledStyles(outline, theme)
       ]} 
+      disabled={disabled}
       ref={ref} 
       {...props}>
        {

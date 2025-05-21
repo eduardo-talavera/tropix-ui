@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from "@emotion/react"
 import { FC, forwardRef, HTMLAttributes, useEffect, useState } from "react"
-import { toggleStyles } from "./toggleStyles"
+import { toggleStyles } from "./toggle.styles"
 import { useThemeMode } from "../../main"
 
 interface ToggleProps extends HTMLAttributes<HTMLDivElement> {
@@ -46,6 +46,7 @@ export const Toggle: FC<ToggleProps> = forwardRef<HTMLDivElement, ToggleProps>
           toggled && styles.toggled,
           disabled && { pointerEvents: 'none' }
         ]}
+        disabled={disabled}
         onClick={handleClick}
       >
         <div className='thumb' css={[styles.thumb, toggled && styles.toggledThumb]}>

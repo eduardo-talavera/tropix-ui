@@ -1,4 +1,5 @@
-import { defineConfig } from 'vite'
+/// <reference types="vitest" />
+import { coverageConfigDefaults, defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -13,6 +14,20 @@ export default defineConfig({
     react(), 
     dts({ rollupTypes: true })
   ],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './vitest.setup.ts',
+    coverage: {
+        exclude: [
+          '**/storybook-static/**',
+          '**/theme/**',
+          '**/*.stories.tsx',
+          '**/*.styles.ts',
+           ...coverageConfigDefaults.exclude
+        ]
+    }
+  },
   build: {
     lib: {
       entry: resolve(__dirname, 'src/main.ts'),
