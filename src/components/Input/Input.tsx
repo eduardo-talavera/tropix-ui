@@ -2,8 +2,9 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { inputStyles } from './input.styles';
-import { FC, forwardRef, InputHTMLAttributes } from 'react';
-import { CircleCheck } from 'lucide-react';
+import { CSSProperties, FC, forwardRef, InputHTMLAttributes, JSX } from 'react';
+import { LucideProps } from 'lucide-react';
+import { useThemeMode } from '../../main';
 
 interface TextInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
   label: string
@@ -14,41 +15,45 @@ interface TextInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'on
   intent?: Intent
   errorMessage?: string
   value?: string | number
+  icon?: JSX.Element
+  wrapperStyles?: CSSProperties
   onChange: (value: string | number) => void
 }
 
-export type Intent = 'initial' | 'success' | 'error'  | 'warning'  | 'active'
+export type LucideIcon = React.ForwardRefExoticComponent<Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>>
+
+export type Intent = 'initial' | 'success' | 'error'  | 'info' 
 
 type InputType =  'text' | 'email' | 'password' | 'date' | 'number' | 'search' | 'currency'
 
 export const Input: FC<TextInputProps> = forwardRef<HTMLInputElement, TextInputProps>(
-    ({ label, intent = 'initial', type = 'text', errorMessage, onChange, value, ...props }: TextInputProps, ref) => {
+    ({ label, intent = 'initial', type = 'text', errorMessage, onChange, value, icon, wrapperStyles, ...props }: TextInputProps, ref) => {
 
   const theme = useTheme()
-  const styles = inputStyles(theme, intent)
+  const { isDark } = useThemeMode()
+  const styles = inputStyles(theme, intent, isDark)
+  // icon is already a JSX.Element, no need to assign to Icon
 
   const handleChange = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
    onChange(value)
   }
   return (
-    <>
-      <div css={styles.inputWrapper} ref={ref}>
-        <label css={styles.label} htmlFor={props.id || props.name }> { label } </label>
-        <div>
-            <input 
-                css={styles.input} 
-                onChange={handleChange}
-                value={value}
-                { ...props }
-            />
-            <CircleCheck />
-        </div>
-        {
-            intent === 'error' && (
-                <span css={styles.label} > { errorMessage ?? 'Invalid format' } </span>
+    <div css={styles.labelAndInputWrapper} style={wrapperStyles}>
+      <label css={styles.label} htmlFor={props.id || props.name }> { label } </label>
+      <div css={styles.inputWrapper} ref={ref}> 
+        <input 
+            css={styles.input} 
+            onChange={handleChange}
+            value={value}
+            {...props}
+        />
+      { icon && icon }
+      </div>
+       {
+            (intent === 'error' && errorMessage) && (
+                <span css={styles.label} > { errorMessage } </span>
             )
         }
-      </div>
-    </>
+    </div>
   )
 })

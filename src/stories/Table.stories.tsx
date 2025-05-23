@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Table } from "../components/Table/Table";
 import { users } from "../utils/constants";
+import { Pencil, Share2, Trash2 } from 'lucide-react'
+import { useTheme } from "@emotion/react";
+import { useThemeMode } from "../main";
+import { Table } from "../components/Table/Table";
 
 const meta: Meta<typeof Table> = {
   title: "Components/Table",
@@ -9,11 +12,6 @@ const meta: Meta<typeof Table> = {
   argTypes: {
     children: {
       description: "The button label"
-    },
-    height: {
-      type: 'number',
-      description: 'height',
-      control: 'number'
     }
   }
 };
@@ -22,7 +20,35 @@ export default meta;
 
 type Story = StoryObj<typeof Table>;
 
-const TableDefault = ({ height }: { height: number }) => {
+function App() {
+    const mapedUsers = users.map(user => {
+    return {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      phone: user.phone,
+      city: user.address.city,
+    }
+  })
+  return (
+      <Table headers={['Id', 'Nombre', 'Email', 'Telefono', 'Ciudad']} height={350}>
+      {
+        mapedUsers.map(user => (
+            <Table.Row>
+                <Table.Cell label="Id">{user.id}</Table.Cell>
+                <Table.Cell label="Nombre">{user.name}</Table.Cell>
+                <Table.Cell label="Email">{user.email}</Table.Cell>
+                <Table.Cell label="Telefono">{user.email}</Table.Cell>
+                <Table.Cell label="Ciudad">{user.city}</Table.Cell>
+            </Table.Row>
+        ))
+      }
+    </Table>
+  );
+}
+
+
+function App2() {
   const mapedUsers = users.map(user => {
     return {
       id: user.id,
@@ -32,69 +58,42 @@ const TableDefault = ({ height }: { height: number }) => {
       city: user.address.city,
     }
   })
-  return <>
-    <Table height={height}>
-      <Table.Header>
-          <Table.Heading>id</Table.Heading>
-          <Table.Heading>Name</Table.Heading>
-          <Table.Heading>Email</Table.Heading>
-          <Table.Heading>Phone</Table.Heading>
-          <Table.Heading>City</Table.Heading>
-      </Table.Header>
-      <Table.Body data={mapedUsers}/>
+    const theme = useTheme()
+    const { isDark } = useThemeMode()
+
+  return (
+    <Table headers={['Id', 'Nombre', 'Email', 'Telefono', 'Ciudad', 'Acciones']}>
+      {
+        mapedUsers.map(user => (
+            <Table.Row>
+                <Table.Cell label="Id">{user.id}</Table.Cell>
+                <Table.Cell label="Nombre">{user.name}</Table.Cell>
+                <Table.Cell label="Email">{user.email}</Table.Cell>
+                <Table.Cell label="Telefono">{user.email}</Table.Cell>
+                <Table.Cell label="Ciudad">{user.city}</Table.Cell>
+                <Table.Cell label="Acciones">
+                     <div
+                          style={{ display: 'flex' }}
+                        >
+                          <Pencil style={{ width: '17px', marginRight: '0.8rem', color: isDark ? theme.colors.cobaltBlue[6] : '#000' }} />
+                          <Trash2 style={{ width: '17px', marginRight: '0.8rem', color: isDark ? theme.colors.cobaltBlue[6] : '#000' }} />
+                          <Share2 style={{ width: '17px', color: isDark ? theme.colors.cobaltBlue[6] : '#000' }} />
+                        </div>
+                </Table.Cell>
+            </Table.Row>
+        ))
+      }
     </Table>
-  </>
-};
-
-const TableWithRenderProp = () => {
-  return <>
-       <Table>
-          <Table.Header>
-              <Table.Heading> 
-                  <input style={{ marginRight: 10 }} type="checkbox" />
-              </Table.Heading>
-              <Table.Heading>id</Table.Heading>
-              <Table.Heading>Name</Table.Heading>
-              <Table.Heading>Email</Table.Heading>
-              <Table.Heading>Phone</Table.Heading>
-              <Table.Heading>City</Table.Heading>
-          </Table.Header>
-          <Table.Body
-              data={users}
-              render={(user, index) => (
-                  <Table.Row key={index}>
-                      <Table.Cell> 
-                          <input style={{ marginRight: 10 }} type="checkbox" />
-                      </Table.Cell>
-                      <Table.Cell className='px-6 py-4 text-sm whitespace-nowrap'>
-                          {user.id}
-                      </Table.Cell>
-                      <Table.Cell className='px-6 py-4 text-sm whitespace-nowrap'>
-                          {user.name}
-                      </Table.Cell>
-                      <Table.Cell className='px-6 py-4 text-sm whitespace-nowrap'>
-                          {user.email}
-                      </Table.Cell>
-                      <Table.Cell className='px-6 py-4 text-sm whitespace-nowrap'>
-                          {user.phone}
-                      </Table.Cell>
-                        <Table.Cell className='px-6 py-4 text-sm whitespace-nowrap'>
-                          {user.address.city}
-                      </Table.Cell>
-                  </Table.Row>
-              )}
-            />
-      </Table>
-  </>
-};
-
-
-export const Table_default_with_height_prop: Story = {
-  name: 'Table default with height prop',
-  render: () => <TableDefault height={350} />
+  );
 }
 
-export const Table_with_render_prop: Story = {
-  name: 'Table with render prop',
-  render: () => <TableWithRenderProp />
+export const Table_mobile: Story = {
+  name: 'Table Default',
+  render: () => <App />
+}
+
+
+export const Table_mobile2: Story = {
+  name: 'Table CustomRenders',
+  render: () => <App2 />
 }

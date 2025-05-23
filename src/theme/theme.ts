@@ -21,11 +21,18 @@ const fonts = {
   secondary: 'Lato'
 }
 
-const intents: Intents = {
+const intentsLight: Intents = {
   success: palette.jungleGreen[10],
   error: palette.poppy[10],
   initial: palette.jet[10],
-  info: palette.teal[10]
+  info: palette.teal[8]
+}
+
+const intentsDark: Intents = {
+  success: palette.jungleGreen[7],
+  error: palette.poppy[7],
+  initial: palette.jet[3],
+  info: palette.teal[5]
 }
 
 export const lightTheme = {
@@ -33,8 +40,8 @@ export const lightTheme = {
     colors: {
       ...palette,
       background: '#fff',
-      text: '#141314',
-      intents
+      text: palette.jet[10],
+      intents: intentsLight
     },
     paddings: {
       sm: '1rem',
@@ -49,8 +56,8 @@ export const darkTheme = {
     colors: {
       ...palette,
       background: '#1b1b1d',
-      text: '#fff',
-      intents
+      text: palette.jet[2],
+      intents: intentsDark
     },
     paddings: {
       sm: '1rem',

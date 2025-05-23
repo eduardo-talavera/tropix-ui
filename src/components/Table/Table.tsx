@@ -1,101 +1,53 @@
 /** @jsxImportSource @emotion/react */
-import { createContext, CSSProperties, JSX } from 'react'
-import { tableStyles } from './table.styles'
-import { useTheme } from '@emotion/react'
-import { useThemeMode } from '../../main'
 
-const TableContext = createContext(undefined)
+import { ReactNode } from 'react';
+import { useThemeMode } from '../../main';
+import { CellWrapper, Label, RowWrapper, TableCard, TableHeader, TableWrapper } from './table.styles';
 
-interface TableProps {
-  children?: React.ReactNode
-  className?: string
-  style?: CSSProperties
-}
 
-interface BodyProps<T> extends TableProps {
-  data: Array<T>
-  render?: (item: T, i: number) => JSX.Element
-}
+type TableProps = { headers: string[]; children: ReactNode, height?: number };
+type RowProps = { children: ReactNode };
+type CellProps = { label?: string; children: ReactNode };
 
-type TableRowsProps<T extends Record<string, any>> = {
-  data: Array<T>
-}
+function Table({ headers, children, height = 500 }: TableProps) {
+  const { isDark, theme } = useThemeMode()
 
-export function Table({ children, height = 500, ...props }: TableProps & { height?: number }) {
-
-  const theme = useTheme()
-  const { isDark } = useThemeMode()
-  const styles = tableStyles(theme, isDark, height)
-
+  const restProps = {
+    theme,
+    isDark
+  }
+  
   return (
-    <TableContext.Provider value={undefined}>
-      <div css={styles} {...props}>
-        <div className='table-wrapper'>
-            <table className='styled-table'>{children}</table>
-        </div>
-      </div>
-    </TableContext.Provider>
-  )
+   <TableCard height={height} {...restProps}>
+     <TableWrapper height={height} {...restProps}>
+      <TableHeader columns={headers.length} {...restProps}>
+        {headers.map((header, i) => (
+          <div key={i}>{header}</div>
+        ))}
+      </TableHeader>
+      {children}
+    </TableWrapper>
+   </TableCard>
+  );
 }
 
+function Row({ children }: RowProps) {
+  const { isDark, theme } = useThemeMode()
+  return <RowWrapper isDark={isDark} theme={theme}>{children}</RowWrapper>;
+}
 
-function Header({ children, ...props }: TableProps) {
+function Cell({ label, children }: CellProps) {
+   const { isDark, theme } = useThemeMode()
   return (
-    <thead {...props}>
-      <tr>{children}</tr>
-    </thead>
-  )
+    <CellWrapper isDark={isDark} theme={theme}>
+      <Label>{label}</Label>
+      <span>{children}</span>
+    </CellWrapper>
+  );
 }
 
-function Heading({ children, ...props }: TableProps) {
-  return (
-    <th {...props}>{children}</th>
-  )
-}
+// Compound assignment
+Table.Row = Row;
+Table.Cell = Cell;
 
-function Body<T extends Record<string, any>>({ data, render, ...props }: BodyProps<T>) {
-  return render 
-    ? <tbody {...props}> {(data && render) ? data.map(render) : null } </tbody>
-    : <TableRows<T> data={data} />
-}
-
-
-const TableRows = <T extends Record<string, any>>({ data }: TableRowsProps<T>): JSX.Element => {
-  const rows = data.map((row, index) => {
-    return (
-      <tr key={`row-${index}`}>
-        {Object.values(row).map((column, index2) => {
-          return (
-            <td key={`cell-${index2}`}>
-              {column}
-            </td>
-          )
-        })}
-      </tr>
-    )
-  })
-
-  return (
-    <tbody>
-      {rows}
-    </tbody>
-  )
-}
-
-function Row({ children, ...props }: TableProps) {
-  return (
-    <tr {...props}>{children}</tr>
-  )
-}
-
-function Cell({ children, ...props }: TableProps) {
-  return (
-    <td {...props}>{children}</td>
-  )
-}
-
-Table.Header = Header
-Table.Heading = Heading
-Table.Body = Body
-Table.Row = Row
-Table.Cell = Cell
+export { Table };
