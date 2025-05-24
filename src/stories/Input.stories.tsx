@@ -1,12 +1,8 @@
 /** @jsxImportSource @emotion/react */
+import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Input, InputSize, Intent } from '../components/Input/Input';
-
-import { CircleCheck } from 'lucide-react'
-import { SetStateAction, useCallback, useState } from "react";
-import { useTheme } from "@emotion/react";
 import { REG_EXS } from "../utils/regex";
-
 
 
 const meta: Meta<typeof Input> = {

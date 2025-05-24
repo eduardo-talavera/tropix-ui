@@ -4,6 +4,7 @@ import { Pencil, Share2, Trash2 } from 'lucide-react'
 import { useTheme } from "@emotion/react";
 import { useThemeMode } from "../main";
 import { Table } from "../components/Table/Table";
+import { Avatar } from "@/components/Avatar/Avatar";
 
 const meta: Meta<typeof Table> = {
   title: "Components/Table",
@@ -66,10 +67,15 @@ function App2() {
       headers={['Id', 'User', 'Email', 'Phone', 'City', 'Actions']}
       >
       {
-        mapedUsers.map(user => (
+        mapedUsers.map((user, i) => (
             <Table.Row key={user.id}>
                 <Table.Cell label="Id">{user.id}</Table.Cell>
-                <Table.Cell label="User">{user.name}</Table.Cell>
+                <Table.Cell label="User">
+                   <div style={{ display: 'flex', alignItems: 'center' }}>
+                      <Avatar size="sm" src={`https://i.pravatar.cc/100?img=${i}`} />
+                      <span style={{ paddingLeft: '1rem' }}>{ user.name }</span>
+                   </div>
+                </Table.Cell>
                 <Table.Cell label="Email">{user.email}</Table.Cell>
                 <Table.Cell label="Phone">{user.email}</Table.Cell>
                 <Table.Cell label="City">{user.city}</Table.Cell>
