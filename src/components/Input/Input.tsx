@@ -1,59 +1,190 @@
-
 /** @jsxImportSource @emotion/react */
-import { useTheme } from '@emotion/react';
-import { inputStyles } from './input.styles';
-import { CSSProperties, FC, forwardRef, InputHTMLAttributes, JSX } from 'react';
-import { LucideProps } from 'lucide-react';
-import { useThemeMode } from '../../main';
+import { useTheme } from '@emotion/react'
+import { inputStyles } from './input.styles'
+import {
+  CSSProperties,
+  FC,
+  forwardRef,
+  InputHTMLAttributes,
+  JSX,
+  useCallback,
+  useState
+} from 'react'
+import { Eye, EyeOff, LucideProps, Search } from 'lucide-react'
+import { useThemeMode } from '../../main'
 
-interface TextInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
+interface TextInputProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'size'> {
   label: string
   name: string
   id?: string
   type?: InputType
+  size?: InputSize
   placeholder?: string
   intent?: Intent
   errorMessage?: string
-  value?: string | number
+  value: string | number
+  max?: number
   icon?: JSX.Element
+  onValueChange?: (value: number) => void;
   wrapperStyles?: CSSProperties
-  onChange: (value: string | number) => void
+  onChange?: (value: string | number) => void
 }
 
-export type LucideIcon = React.ForwardRefExoticComponent<Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>>
+const VALID_FIRST = /^[1-9]{1}$/
+const VALID_NEXT = /^[0-9]{1}$/
+const DELETE_KEY_CODE = 8
 
-export type Intent = 'initial' | 'success' | 'error'  | 'info' 
+export type LucideIcon = React.ForwardRefExoticComponent<
+  Omit<LucideProps, 'ref'> & React.RefAttributes<SVGSVGElement>
+>
 
-type InputType =  'text' | 'email' | 'password' | 'date' | 'number' | 'search' | 'currency'
+export type Intent = 'initial' | 'success' | 'error' | 'info'
 
-export const Input: FC<TextInputProps> = forwardRef<HTMLInputElement, TextInputProps>(
-    ({ label, intent = 'initial', type = 'text', errorMessage, onChange, value, icon, wrapperStyles, ...props }: TextInputProps, ref) => {
+type InputType =
+  | 'text'
+  | 'email'
+  | 'password'
+  | 'number'
+  | 'search'
+  | 'currency'
 
-  const theme = useTheme()
-  const { isDark } = useThemeMode()
-  const styles = inputStyles(theme, intent, isDark)
-  // icon is already a JSX.Element, no need to assign to Icon
+export type InputSize = 'sm' | 'md' | 'lg'
 
-  const handleChange = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
-   onChange(value)
-  }
-  return (
-    <div css={styles.labelAndInputWrapper} style={wrapperStyles}>
-      <label css={styles.label} htmlFor={props.id || props.name }> { label } </label>
-      <div css={styles.inputWrapper} ref={ref}> 
-        <input 
-            css={styles.input} 
-            onChange={handleChange}
-            value={value}
-            {...props}
-        />
-      { icon && icon }
-      </div>
-       {
-            (intent === 'error' && errorMessage) && (
-                <span css={styles.label} > { errorMessage } </span>
-            )
+/**TODO: Develop phone input variant and date picker in an external file */
+
+export const Input: FC<TextInputProps> = forwardRef<
+  HTMLInputElement,
+  TextInputProps
+>(
+  (
+    {
+      label,
+      intent = 'initial',
+      type = 'text',
+      size = 'md',
+      errorMessage,
+      onChange,
+      value,
+      icon,
+      wrapperStyles,
+      max = Number.MAX_SAFE_INTEGER,
+      onValueChange,
+      ...props
+    }: TextInputProps,
+    ref
+  ) => {
+    const theme = useTheme()
+    const { isDark } = useThemeMode()
+    const styles = inputStyles(theme, intent, isDark, size)
+
+    const [showPass, setShowPass] = useState(false)
+
+    const valueAbsTrunc = Math.trunc(Math.abs(value as number))
+
+    if(type === 'currency') {
+        if (value !== valueAbsTrunc || !Number.isFinite(value) ||(Number.isNaN(value))) {
+          throw new Error(`invalid value property`)
         }
-    </div>
-  )
-})
+    }
+  
+    const handleKeyDown = useCallback(
+      (e: React.KeyboardEvent<HTMLInputElement>): void => {
+        const { key, keyCode } = e
+        if (
+          (value === 0 && !VALID_FIRST.test(key)) ||
+          (value !== 0 && !VALID_NEXT.test(key) && keyCode !== DELETE_KEY_CODE)
+        ) {
+          console.log('No pasa primer if')
+          return
+        }
+        console.log('pasa primer if')
+        const valueString = value.toString()
+        let nextValue: number
+        if (keyCode !== DELETE_KEY_CODE) {
+          const nextValueString: string =
+            value === 0 ? key : `${valueString}${key}`
+          nextValue = Number.parseInt(nextValueString, 10)
+        } else {
+          const nextValueString = valueString.slice(0, -1)
+          nextValue =
+            nextValueString === '' ? 0 : Number.parseInt(nextValueString, 10)
+        }
+        if (nextValue > max) {
+          return
+        }
+        onValueChange && onValueChange(nextValue)
+        
+      },
+      [max, onChange, value, onValueChange]
+    )
+
+    const handleChange = useCallback(() => {
+      // DUMMY TO AVOID REACT WARNING
+    }, [])
+
+    const valueDisplay = (Number(value) / 100).toLocaleString('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    })
+    // Currency end
+
+    const handleValueChange = ({
+      target: { value },
+    }: React.ChangeEvent<HTMLInputElement>) => {
+     onChange && onChange(value as string)
+    }
+
+    return (
+      <div css={styles.labelAndInputWrapper} style={wrapperStyles}>
+        <label css={styles.label} htmlFor={props.id || props.name}>
+          {' '}
+          {label}{' '}
+        </label>
+        <div css={styles.inputWrapper} ref={ref}>
+          {type === 'currency' ? (
+            <input
+              css={styles.input}
+              inputMode='numeric'
+              onChange={handleChange}
+              onKeyDown={handleKeyDown}
+              value={valueDisplay}
+              ref={ref}
+              {...props}
+            />
+          ) : (
+            <input
+              css={styles.input}
+              onChange={handleValueChange}
+              value={value}
+              type={
+                type === 'password'
+                  ?  showPass ? 'text' : 'password'
+                  : type
+              }
+              ref={ref}
+              {...props}
+            />
+          )}
+          {icon && icon} 
+          {
+            (type === 'password' && !icon ) && <>
+              { !showPass && <EyeOff css={styles.icon} onClick={() => setShowPass(true)} /> }
+              { showPass && <Eye css={styles.icon} onClick={() => setShowPass(false)} /> }
+            </>
+          }
+
+          {
+            (type === 'search' && !icon ) && <>
+              <Search css={styles.icon} />
+            </>
+          }
+
+        </div>
+        {intent === 'error' && errorMessage && (
+          <span css={styles.label}> {errorMessage} </span>
+        )}
+      </div>
+    )
+  }
+)

@@ -4,12 +4,11 @@ import { ReactNode } from 'react';
 import { useThemeMode } from '../../main';
 import { CellWrapper, Label, RowWrapper, TableCard, TableHeader, TableWrapper } from './table.styles';
 
-
 type TableProps = { headers: string[]; children: ReactNode, height?: number };
 type RowProps = { children: ReactNode };
 type CellProps = { label?: string; children: ReactNode };
 
-function Table({ headers, children, height = 500 }: TableProps) {
+const Table = ({ headers, children, height = 500 }: TableProps) => {
   const { isDark, theme } = useThemeMode()
 
   const restProps = {
@@ -31,12 +30,12 @@ function Table({ headers, children, height = 500 }: TableProps) {
   );
 }
 
-function Row({ children }: RowProps) {
+const Row = ({ children }: RowProps) => {
   const { isDark, theme } = useThemeMode()
   return <RowWrapper isDark={isDark} theme={theme}>{children}</RowWrapper>;
 }
 
-function Cell({ label, children }: CellProps) {
+const Cell = ({ label, children }: CellProps) => {
    const { isDark, theme } = useThemeMode()
   return (
     <CellWrapper isDark={isDark} theme={theme}>

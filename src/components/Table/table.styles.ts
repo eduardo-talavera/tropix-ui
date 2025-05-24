@@ -15,6 +15,7 @@ export const TableCard = styled.div<{ isDark?: boolean; height?: number }>`
 `
 
 export const TableWrapper = styled.div<{ height?: number, theme: Theme, isDark: boolean }>`
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   background: transparent;

@@ -1,7 +1,25 @@
 import { Theme, css } from "@emotion/react";
-import { Intent } from "./Input";
+import { Intent, InputSize } from './Input';
 
-export const inputStyles = (theme: Theme, intent: Intent, isDark: boolean) => ({
+const sizeWrapperStyles = {
+    sm: { height: '1.8rem', minWidth: 150, maxWidth: 200 },
+    md: { height: '3rem', minWidth: 250, maxWidth: 300 },
+    lg: { height: '3.5rem', minWidth: 450, maxWidh: 600 }
+}
+
+const sizeInputStyles = {
+    sm: { fontSize: '0.8rem' },
+    md: { fontSize: '1rem' },
+    lg: { fontSize: '1.2rem' }
+}
+
+const sizeIconStyles = {
+    sm: { height: '0.8rem' },
+    md: { height: '1.2rem' },
+    lg: { height: '1.4rem' }
+}
+
+export const inputStyles = (theme: Theme, intent: Intent, isDark: boolean, size: InputSize) => ({
     labelAndInputWrapper: css({
         display: 'flex',
         flexDirection: 'column',
@@ -17,11 +35,10 @@ export const inputStyles = (theme: Theme, intent: Intent, isDark: boolean) => ({
         alignItems: 'center',
         justifyContent: 'space-between',
         borderStyle: 'solid',
-        height: '3rem',
+        ...(sizeWrapperStyles[size]),
         boxSizing: 'border-box',
         padding: '0.5rem 1rem',
-        borderRadius: '0.25rem',
-        maxWidth: '450px',
+        borderRadius: '0.3rem',
         background: isDark ? 'transparent' : '#fff',
         border: `2px solid ${theme.colors.intents[intent as keyof typeof theme.colors.intents]}`,
         ':focus': {
@@ -32,17 +49,6 @@ export const inputStyles = (theme: Theme, intent: Intent, isDark: boolean) => ({
             borderColor: (intent !== 'error' && intent !== 'success') 
             ? theme.colors.intents.info : undefined,
         },
-        ':[type=number]::-webkit-inner-spin-button': {
-            WebkitAppearance: 'none',
-            margin: 0 
-        },
-        ':[type=number]::-webkit-outer-spin-button': {
-            WebkitAppearance: 'none'
-        },
-        ':[type=number]': {
-            MozAppearance: 'textfield'
-        },
-
         ['> svg']: {
             flexGrow: 1
         }
@@ -57,7 +63,7 @@ export const inputStyles = (theme: Theme, intent: Intent, isDark: boolean) => ({
         color: theme.colors.intents[intent as keyof typeof theme.colors.intents],
     }),
     input: css({
-        fontSize: '1rem',
+        ...(sizeInputStyles[size]),
         fontFamily: theme.fonts.base,
         border: 'none',
         outline: 'none',
@@ -67,8 +73,23 @@ export const inputStyles = (theme: Theme, intent: Intent, isDark: boolean) => ({
         padding: 0,
         flexGrow: '7',
         fontWeight: 500,
-        ['::placeholder']: {
+        '&[type=number]::-webkit-inner-spin-button': {
+            WebkitAppearance: 'none',
+            margin: 0 
+        },
+        '&[type=number]::-webkit-outer-spin-button': {
+            WebkitAppearance: 'none'
+        },
+        '&[type=number]': {
+            MozAppearance: 'textfield'
+        },
+        ['&::placeholder']: {
            fontWeight: 500
         }
+    }),
+    icon: css({
+        color: theme.colors.text,
+        cursor: 'pointer',
+        ...(sizeIconStyles[size])
     })
 })

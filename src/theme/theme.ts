@@ -24,7 +24,7 @@ const fonts = {
 const intentsLight: Intents = {
   success: palette.jungleGreen[10],
   error: palette.poppy[10],
-  initial: palette.jet[10],
+  initial: palette.jet[4],
   info: palette.teal[8]
 }
 

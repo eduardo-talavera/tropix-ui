@@ -34,7 +34,7 @@ function App() {
       <Table headers={['Id', 'Nombre', 'Email', 'Telefono', 'Ciudad']} height={350}>
       {
         mapedUsers.map(user => (
-            <Table.Row>
+            <Table.Row key={user.id}>
                 <Table.Cell label="Id">{user.id}</Table.Cell>
                 <Table.Cell label="Nombre">{user.name}</Table.Cell>
                 <Table.Cell label="Email">{user.email}</Table.Cell>
@@ -62,10 +62,12 @@ function App2() {
     const { isDark } = useThemeMode()
 
   return (
-    <Table headers={['Id', 'Nombre', 'Email', 'Telefono', 'Ciudad', 'Acciones']}>
+    <Table 
+      headers={['Id', 'Nombre', 'Email', 'Telefono', 'Ciudad', 'Acciones']}
+      >
       {
         mapedUsers.map(user => (
-            <Table.Row>
+            <Table.Row key={user.id}>
                 <Table.Cell label="Id">{user.id}</Table.Cell>
                 <Table.Cell label="Nombre">{user.name}</Table.Cell>
                 <Table.Cell label="Email">{user.email}</Table.Cell>
