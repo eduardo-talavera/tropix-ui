@@ -99,7 +99,9 @@
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "framer-motion": "^12.11.0",
+    "lucide-react": "^0.511.0",
     "values.js": "^2.1.1"
   },
   "eslintConfig": {
