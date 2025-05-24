@@ -2,7 +2,7 @@ import { Theme } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const TableCard = styled.div<{ isDark?: boolean; height?: number }>`
-  background: 'transparent
+  background: transparent;
   box-sizing: border-box;
 
   @media (min-width: 768px) {
@@ -15,7 +15,6 @@ export const TableCard = styled.div<{ isDark?: boolean; height?: number }>`
 `
 
 export const TableWrapper = styled.div<{ height?: number, theme: Theme, isDark: boolean }>`
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   background: transparent;

@@ -17,7 +17,7 @@ const Table = ({ headers, children, height = 500 }: TableProps) => {
   }
   
   return (
-   <TableCard height={height} {...restProps}>
+   <TableCard data-testid='table-card' height={height} {...restProps}>
      <TableWrapper height={height} {...restProps}>
       <TableHeader columns={headers.length} {...restProps}>
         {headers.map((header, i) => (

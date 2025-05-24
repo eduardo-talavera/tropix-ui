@@ -31,15 +31,15 @@ function App() {
     }
   })
   return (
-      <Table headers={['Id', 'Nombre', 'Email', 'Telefono', 'Ciudad']} height={350}>
+      <Table headers={['Id', 'User', 'Email', 'Phone', 'City']} height={350}>
       {
         mapedUsers.map(user => (
             <Table.Row key={user.id}>
                 <Table.Cell label="Id">{user.id}</Table.Cell>
-                <Table.Cell label="Nombre">{user.name}</Table.Cell>
+                <Table.Cell label="Name">{user.name}</Table.Cell>
                 <Table.Cell label="Email">{user.email}</Table.Cell>
-                <Table.Cell label="Telefono">{user.email}</Table.Cell>
-                <Table.Cell label="Ciudad">{user.city}</Table.Cell>
+                <Table.Cell label="Phone">{user.email}</Table.Cell>
+                <Table.Cell label="City">{user.city}</Table.Cell>
             </Table.Row>
         ))
       }
@@ -63,17 +63,17 @@ function App2() {
 
   return (
     <Table 
-      headers={['Id', 'Nombre', 'Email', 'Telefono', 'Ciudad', 'Acciones']}
+      headers={['Id', 'User', 'Email', 'Phone', 'City', 'Actions']}
       >
       {
         mapedUsers.map(user => (
             <Table.Row key={user.id}>
                 <Table.Cell label="Id">{user.id}</Table.Cell>
-                <Table.Cell label="Nombre">{user.name}</Table.Cell>
+                <Table.Cell label="User">{user.name}</Table.Cell>
                 <Table.Cell label="Email">{user.email}</Table.Cell>
-                <Table.Cell label="Telefono">{user.email}</Table.Cell>
-                <Table.Cell label="Ciudad">{user.city}</Table.Cell>
-                <Table.Cell label="Acciones">
+                <Table.Cell label="Phone">{user.email}</Table.Cell>
+                <Table.Cell label="City">{user.city}</Table.Cell>
+                <Table.Cell label="Actions">
                      <div
                           style={{ display: 'flex' }}
                         >

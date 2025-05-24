@@ -14,6 +14,11 @@ export default defineConfig({
     react(), 
     dts({ rollupTypes: true })
   ],
+  resolve: {
+      alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
   test: {
     globals: true,
     environment: 'jsdom',
@@ -22,6 +27,8 @@ export default defineConfig({
         exclude: [
           '**/storybook-static/**',
           '**/theme/**',
+          '**/utils/**',
+          '**/src/components/DataTable/**',
           '**/*.stories.tsx',
           '**/*.styles.ts',
            ...coverageConfigDefaults.exclude

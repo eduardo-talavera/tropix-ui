@@ -95,10 +95,8 @@ export const Input: FC<TextInputProps> = forwardRef<
           (value === 0 && !VALID_FIRST.test(key)) ||
           (value !== 0 && !VALID_NEXT.test(key) && keyCode !== DELETE_KEY_CODE)
         ) {
-          console.log('No pasa primer if')
           return
         }
-        console.log('pasa primer if')
         const valueString = value.toString()
         let nextValue: number
         if (keyCode !== DELETE_KEY_CODE) {
@@ -127,8 +125,7 @@ export const Input: FC<TextInputProps> = forwardRef<
       style: 'currency',
       currency: 'USD',
     })
-    // Currency end
-
+  
     const handleValueChange = ({
       target: { value },
     }: React.ChangeEvent<HTMLInputElement>) => {
@@ -166,17 +163,35 @@ export const Input: FC<TextInputProps> = forwardRef<
               {...props}
             />
           )}
+
           {icon && icon} 
+
           {
             (type === 'password' && !icon ) && <>
-              { !showPass && <EyeOff css={styles.icon} onClick={() => setShowPass(true)} /> }
-              { showPass && <Eye css={styles.icon} onClick={() => setShowPass(false)} /> }
+              { 
+                !showPass && <>
+                  <EyeOff  
+                    data-testid='lucide-eye-off' 
+                    css={styles.icon} 
+                    onClick={() => setShowPass(true)} 
+                  />
+                </> 
+              }
+
+              { 
+                showPass && <>
+                  <Eye 
+                    data-testid='lucide-eye' 
+                    css={styles.icon} 
+                    onClick={() => setShowPass(false)} 
+                  />
+                </> }
             </>
           }
 
           {
             (type === 'search' && !icon ) && <>
-              <Search css={styles.icon} />
+              <Search data-testid='lucide-search' css={styles.icon} />
             </>
           }
 
