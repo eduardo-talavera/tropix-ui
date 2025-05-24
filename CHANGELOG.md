@@ -1,3 +1,14 @@
+# [1.7.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.6.1...v1.7.0) (2025-05-24)
+
+
+### Features
+
+* **avatar:** add avatar component and tests ([01f7d4e](https://github.com/eduardo-talavera/tropix-ui/commit/01f7d4e5ee18f40b87b0f73c0a0050b2e5441242))
+* **input:** adding input sizes prop ([eacb659](https://github.com/eduardo-talavera/tropix-ui/commit/eacb65928e4f795f07e7ce0999a0b3b6dd8a2041))
+* **table, input:** adding unit tests for table and input components ([7813034](https://github.com/eduardo-talavera/tropix-ui/commit/7813034e4fff8a5df5a6c22dd3c7175820a51238))
+* **Table:** adding responsive design ([cc61918](https://github.com/eduardo-talavera/tropix-ui/commit/cc61918fcf3547b5a56067db87d8346093ae1be4))
+* **Table:** adding Table component ([95eb56a](https://github.com/eduardo-talavera/tropix-ui/commit/95eb56a3a608c9c0581904290fd9f0387d84ac0b))
+
 ## [1.6.1](https://github.com/eduardo-talavera/tropix-ui/compare/v1.6.0...v1.6.1) (2025-05-21)
 
 
