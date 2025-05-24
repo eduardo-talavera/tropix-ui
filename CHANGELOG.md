@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/eduardo-talavera/tropix-ui/compare/v1.7.0...v1.7.1) (2025-05-24)
+
+
+### Bug Fixes
+
+* **avatar:** export avatar component ([7f020d3](https://github.com/eduardo-talavera/tropix-ui/commit/7f020d33d77d8922bcd444120e90c15f3f7cc790))
+
 # [1.7.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.6.1...v1.7.0) (2025-05-24)
 
 
