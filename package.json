@@ -8,7 +8,6 @@
   ],
   "main": "./dist/tropix-ui.cjs.js",
   "module": "./dist/tropix-ui.es.js",
-  "types": "dist/tropix-ui.d.ts",
   "sideEffects": false,
   "exports": {
     ".": {
