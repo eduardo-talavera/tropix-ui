@@ -1,3 +1,11 @@
+# [1.8.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.7.1...v1.8.0) (2025-06-22)
+
+
+### Features
+
+* **general:** enable tree shaking ([7185717](https://github.com/eduardo-talavera/tropix-ui/commit/71857179bca4736ceea76aec0295e80dd2ebcc52))
+* **package.json:** remove types property ([8bad17e](https://github.com/eduardo-talavera/tropix-ui/commit/8bad17e62c58282de52f0752dc5aa048b1be6bed))
+
 ## [1.7.1](https://github.com/eduardo-talavera/tropix-ui/compare/v1.7.0...v1.7.1) (2025-05-24)
 
 
