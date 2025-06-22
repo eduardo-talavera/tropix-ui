@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/eduardo-talavera/tropix-ui/compare/v1.8.0...v1.8.1) (2025-06-22)
+
+
+### Bug Fixes
+
+* **entryfile:** rename entry file to index ([a116458](https://github.com/eduardo-talavera/tropix-ui/commit/a116458d3890b34d502d489128ee8e9c811ea614))
+
 # [1.8.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.7.1...v1.8.0) (2025-06-22)
 
 
