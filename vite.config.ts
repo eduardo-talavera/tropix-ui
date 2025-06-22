@@ -39,7 +39,8 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/main.ts'),
       name: 'tropix-ui',
-      fileName: 'tropix-ui',
+      fileName: (format) => `tropix-ui.${format}.js`,
+      formats: ['es', 'cjs']
     },
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime'],

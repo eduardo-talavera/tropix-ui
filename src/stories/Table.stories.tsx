@@ -39,7 +39,7 @@ function App() {
                 <Table.Cell label="Id">{user.id}</Table.Cell>
                 <Table.Cell label="Name">{user.name}</Table.Cell>
                 <Table.Cell label="Email">{user.email}</Table.Cell>
-                <Table.Cell label="Phone">{user.email}</Table.Cell>
+                <Table.Cell label="Phone">{user.phone}</Table.Cell>
                 <Table.Cell label="City">{user.city}</Table.Cell>
             </Table.Row>
         ))
@@ -77,7 +77,7 @@ function App2() {
                    </div>
                 </Table.Cell>
                 <Table.Cell label="Email">{user.email}</Table.Cell>
-                <Table.Cell label="Phone">{user.email}</Table.Cell>
+                <Table.Cell label="Phone">{user.phone}</Table.Cell>
                 <Table.Cell label="City">{user.city}</Table.Cell>
                 <Table.Cell label="Actions">
                      <div
