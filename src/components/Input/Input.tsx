@@ -11,7 +11,7 @@ import {
   useState
 } from 'react'
 import { Eye, EyeOff, LucideProps, Search } from 'lucide-react'
-import { useThemeMode } from '../..'
+import { useThemeMode } from '../../main'
 
 interface TextInputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'size'> {
