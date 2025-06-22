@@ -6,13 +6,12 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/tropix-ui.cjs.js",
-  "module": "./dist/tropix-ui.es.js",
-  "sideEffects": false,
+  "main": "./dist/tropix-ui.umd.cjs",
+  "module": "./dist/tropix-ui.js",
   "exports": {
     ".": {
-      "import": "./dist/tropix-ui.es.js",
-      "require": "./dist/tropix-ui.cjs.js"
+      "import": "./dist/tropix-ui.js",
+      "require": "./dist/tropix-ui.umd.cjs"
     }
   },
   "license": "MIT",

@@ -2,7 +2,7 @@
 import { useTheme } from "@emotion/react"
 import { FC, forwardRef, HTMLAttributes, useEffect, useState } from "react"
 import { toggleStyles } from "./toggle.styles"
-import { useThemeMode } from "../.."
+import { useThemeMode } from "../../main"
 
 interface ToggleProps extends HTMLAttributes<HTMLDivElement> {
     onPress: (tooggled: boolean) => void
