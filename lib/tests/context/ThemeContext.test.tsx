@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import { ThemeProvider, useThemeMode } from '../../context/ThemeContext';
+import { ThemeProvider, useThemeMode } from '@/context/ThemeContext';
 
 const Consumer = () => {
   const { isDark, toggleTheme, setIsDark } = useThemeMode();

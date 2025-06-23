@@ -1,7 +1,7 @@
 import { screen, fireEvent } from '@testing-library/react';
-import { render } from '../../../utils/test-utils';
+import { render } from '@/utils/test-utils';
 import { describe, it, expect, vi } from 'vitest';
-import { Toggle } from '../../../components/Toggle/Toggle';
+import { Toggle } from '@/components/Toggle/Toggle';
 
 describe('Toggle', () => {
 

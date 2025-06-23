@@ -6,8 +6,10 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/tropix-ui.umd.cjs",
-  "module": "./dist/tropix-ui.js",
+  "main": "./dist/main.js",
+  "module": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "sideEffects": false,
   "exports": {
     ".": {
       "import": "./dist/tropix-ui.js",
@@ -45,7 +47,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build:old": "tsc -b && vite build",
+    "build": "tsc -p ./tsconfig-build.json && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
@@ -84,6 +87,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "eslint-plugin-storybook": "^0.12.0",
+    "glob": "^11.0.3",
     "globals": "^16.0.0",
     "jsdom": "^26.1.0",
     "playwright": "^1.52.0",

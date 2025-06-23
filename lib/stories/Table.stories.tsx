@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { users } from "../utils/constants";
 import { Pencil, Share2, Trash2 } from 'lucide-react'
 import { useTheme } from "@emotion/react";
-import { useThemeMode } from "../main";
-import { Table } from "../components/Table/Table";
+import { useThemeMode } from "@/context/ThemeContext";
+import { Table } from "@/components/Table/Table";
 import { Avatar } from "@/components/Avatar/Avatar";
 
 const meta: Meta<typeof Table> = {
