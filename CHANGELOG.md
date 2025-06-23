@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.15.0...v1.16.0) (2025-06-23)
+
+
+### Features
+
+* **vite.config:** remove node_modules from rolloup external ([d4a8b2b](https://github.com/eduardo-talavera/tropix-ui/commit/d4a8b2bdbbcaf1aa157c2bc73bcc1a3e34c81ad2))
+
 # [1.15.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.14.0...v1.15.0) (2025-06-23)
 
 
