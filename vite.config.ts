@@ -1,31 +1,44 @@
 /// <reference types="vitest" />
-import { coverageConfigDefaults, defineConfig } from 'vitest/config'
+import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
-import { dirname, extname, relative, resolve } from 'node:path'
+import dts from 'vite-plugin-dts'
+import { resolve, dirname, extname, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { glob } from 'glob'
-import dts from 'vite-plugin-dts'
-
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-// https://vite.dev/config/
+// Mapeamos todos los archivos de entrada
+const entries = Object.fromEntries(
+  glob.sync('lib/**/*.{ts,tsx}', {
+    ignore: [
+      'lib/**/*.d.ts',
+      'lib/**/*.stories.tsx',
+      'lib/**/*.test.tsx',
+      '**/lib/components/DataTable/**',
+    ],
+  }).map((file) => [
+    relative('lib', file.slice(0, file.length - extname(file).length)),
+    fileURLToPath(new URL(file, import.meta.url)),
+  ])
+)
+
 export default defineConfig({
   plugins: [
-    react(), 
-    dts({ 
+    react(),
+    dts({
       include: 'lib',
       exclude: [
-        'lib/**/*.stories.tsx', 
-        'lib/**/*.test.tsx', 
-        '**/lib/components/DataTable/**'
+        'lib/**/*.stories.tsx',
+        'lib/**/*.test.tsx',
+        '**/lib/components/DataTable/**',
       ],
-      //rollupTypes: true
-    })
+      outDir: 'dist/types',
+    }),
   ],
   resolve: {
-      alias: {
-      '@': fileURLToPath(new URL('./lib', import.meta.url)),
+    alias: {
+      '@': resolve(__dirname, 'lib'),
     },
   },
   test: {
@@ -33,50 +46,38 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './vitest.setup.ts',
     coverage: {
-        exclude: [
-          '**/storybook-static/**',
-          '**/theme/**',
-          '**/utils/**',
-          '**/lib/components/DataTable/**',
-          '**/*.stories.tsx',
-          '**/*.styles.ts',
-           ...coverageConfigDefaults.exclude
-        ]
-    }
+      exclude: [
+        '**/storybook-static/**',
+        '**/theme/**',
+        '**/utils/**',
+        '**/lib/components/DataTable/**',
+        '**/*.stories.tsx',
+        '**/*.styles.ts',
+      ],
+    },
   },
   build: {
-    lib: {
-      entry: resolve(__dirname, 'lib/main.ts'),
-      formats: ['es'],
-      name: 'tropix-ui',
-      fileName: (format, entryName) => `my-lib-${entryName}.${format}.js`,
-    },
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime'],
-      input: Object.fromEntries(
-        glob
-          .sync('lib/**/*.{ts,tsx}', {
-            ignore: [
-              'lib/**/*.d.ts', 
-              'lib/**/*.stories.tsx', 
-              'lib/**/*.test.tsx',
-              '**/lib/components/DataTable/**'
-            ],
-          })
-          .map(file => [
-            relative('lib', file.slice(0, file.length - extname(file).length)),
-            fileURLToPath(new URL(file, import.meta.url)),
-      ]),
-    ),
-      output: {
-        assetFileNames: 'assets/[name][extname]',
-        entryFileNames: '[name].js',
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDom',
-          'react/jsx-runtime': 'react/jsx-runtime'
-        }
-      }
+      input: entries,
+      output: [
+        {
+          format: 'es',
+          dir: 'dist/esm',
+          entryFileNames: '[name].js',
+          assetFileNames: 'assets/[name][extname]',
+        },
+        {
+          format: 'cjs',
+          dir: 'dist/cjs',
+          entryFileNames: '[name].js',
+          assetFileNames: 'assets/[name][extname]',
+          exports: 'named',
+        },
+      ],
     },
+    sourcemap: true,
+    outDir: 'dist',
+    emptyOutDir: true,
   },
 })
