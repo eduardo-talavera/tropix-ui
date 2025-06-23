@@ -51,7 +51,13 @@ export default defineConfig({
       },
       rollupOptions: {
         input: entries,
-        external: ['react', 'react-dom', 'react/jsx-runtime'],
+        external: [
+          'react', 
+          'react-dom', 
+          'react/jsx-runtime',
+          '@emotion/react',
+          '@emotion/styled'
+        ],
         output: {
           entryFileNames: '[name].js',
         },
