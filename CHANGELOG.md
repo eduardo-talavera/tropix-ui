@@ -1,3 +1,79 @@
+# [1.14.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.13.0...v1.14.0) (2025-06-23)
+
+
+### Features
+
+* **package.json:** add type paths in imports ([6bf4d43](https://github.com/eduardo-talavera/tropix-ui/commit/6bf4d4399a2c9083f6518520fb1a273236364945))
+
+# [1.13.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.12.0...v1.13.0) (2025-06-23)
+
+
+### Features
+
+* **vite.config:** add commonjs support ([93fec72](https://github.com/eduardo-talavera/tropix-ui/commit/93fec72251bab7b628a5e30b8e92d77d03d481c0))
+
+# [1.12.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.11.0...v1.12.0) (2025-06-23)
+
+
+### Features
+
+* **vite.config:** remove cjs format from build ([1e73d27](https://github.com/eduardo-talavera/tropix-ui/commit/1e73d27f9cad254f04b4677376d34b34f6644724))
+
+# [1.11.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.10.0...v1.11.0) (2025-06-23)
+
+
+### Features
+
+* **package.json:** remove module property ([4c2acf5](https://github.com/eduardo-talavera/tropix-ui/commit/4c2acf5ead59b365d5beb818007fb0a0b4411024))
+
+# [1.10.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.9.0...v1.10.0) (2025-06-23)
+
+
+### Features
+
+* **vite.config:** disable dts rollup options ([380f1cf](https://github.com/eduardo-talavera/tropix-ui/commit/380f1cf4c8522fda7d6cc77c4646007e7d0b5a7f))
+* **vite.config:** enable dts rollup types ([97b2abd](https://github.com/eduardo-talavera/tropix-ui/commit/97b2abd57fda08d6fb5a805268e3ef8d425ef88b))
+
+# [1.9.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.8.1...v1.9.0) (2025-06-23)
+
+
+### Features
+
+* **vite.config:** update config for enable tree shaking ([4fbbe48](https://github.com/eduardo-talavera/tropix-ui/commit/4fbbe4858b6f0b31dfa3f736336b7c87e0089fd8))
+
+## [1.8.1](https://github.com/eduardo-talavera/tropix-ui/compare/v1.8.0...v1.8.1) (2025-06-22)
+
+
+### Bug Fixes
+
+* **entryfile:** rename entry file to index ([a116458](https://github.com/eduardo-talavera/tropix-ui/commit/a116458d3890b34d502d489128ee8e9c811ea614))
+
+# [1.8.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.7.1...v1.8.0) (2025-06-22)
+
+
+### Features
+
+* **general:** enable tree shaking ([7185717](https://github.com/eduardo-talavera/tropix-ui/commit/71857179bca4736ceea76aec0295e80dd2ebcc52))
+* **package.json:** remove types property ([8bad17e](https://github.com/eduardo-talavera/tropix-ui/commit/8bad17e62c58282de52f0752dc5aa048b1be6bed))
+
+## [1.7.1](https://github.com/eduardo-talavera/tropix-ui/compare/v1.7.0...v1.7.1) (2025-05-24)
+
+
+### Bug Fixes
+
+* **avatar:** export avatar component ([7f020d3](https://github.com/eduardo-talavera/tropix-ui/commit/7f020d33d77d8922bcd444120e90c15f3f7cc790))
+
+# [1.7.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.6.1...v1.7.0) (2025-05-24)
+
+
+### Features
+
+* **avatar:** add avatar component and tests ([01f7d4e](https://github.com/eduardo-talavera/tropix-ui/commit/01f7d4e5ee18f40b87b0f73c0a0050b2e5441242))
+* **input:** adding input sizes prop ([eacb659](https://github.com/eduardo-talavera/tropix-ui/commit/eacb65928e4f795f07e7ce0999a0b3b6dd8a2041))
+* **table, input:** adding unit tests for table and input components ([7813034](https://github.com/eduardo-talavera/tropix-ui/commit/7813034e4fff8a5df5a6c22dd3c7175820a51238))
+* **Table:** adding responsive design ([cc61918](https://github.com/eduardo-talavera/tropix-ui/commit/cc61918fcf3547b5a56067db87d8346093ae1be4))
+* **Table:** adding Table component ([95eb56a](https://github.com/eduardo-talavera/tropix-ui/commit/95eb56a3a608c9c0581904290fd9f0387d84ac0b))
+
 ## [1.6.1](https://github.com/eduardo-talavera/tropix-ui/compare/v1.6.0...v1.6.1) (2025-05-21)
 
 
