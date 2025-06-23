@@ -16,7 +16,7 @@ Tropix UI is a colorful and vibrant design system built with React, Typescript, 
 install the package
 
 ```shell
-npm i tropix-ui
+npm i tropix-ui @emotion/react @emotion/styled
 ```
 
 
