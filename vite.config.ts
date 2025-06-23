@@ -64,8 +64,7 @@ export default defineConfig({
       external: [
         'react', 
         'react-dom', 
-        'react/jsx-runtime',
-        /node_modules/
+        'react/jsx-runtime'
       ],
       preserveEntrySignatures: 'allow-extension',
       input: entries,
