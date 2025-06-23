@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.11.0...v1.12.0) (2025-06-23)
+
+
+### Features
+
+* **vite.config:** remove cjs format from build ([1e73d27](https://github.com/eduardo-talavera/tropix-ui/commit/1e73d27f9cad254f04b4677376d34b34f6644724))
+
 # [1.11.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.10.0...v1.11.0) (2025-06-23)
 
 

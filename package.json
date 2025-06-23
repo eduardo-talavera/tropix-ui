@@ -1,6 +1,6 @@
 {
   "name": "tropix-ui",
-  "version": "1.11.0",
+  "version": "1.12.0",
   "type": "module",
   "author": "Edgar Eduardo Talavera",
   "files": [
@@ -57,7 +57,7 @@
   },
   "perDependencies": {
     "react": ">=18.3.1",
-     "react-dom": ">=18.3.1"
+    "react-dom": ">=18.3.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.6",
