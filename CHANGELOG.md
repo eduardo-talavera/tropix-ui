@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.16.0...v1.17.0) (2025-06-23)
+
+
+### Features
+
+* **general-config:** add esm and cjs vite.config files ([62d6f5f](https://github.com/eduardo-talavera/tropix-ui/commit/62d6f5f29a6dd2a96609b3417dd160f7e5a19607))
+
 # [1.16.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.15.0...v1.16.0) (2025-06-23)
 
 
