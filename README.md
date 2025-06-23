@@ -13,12 +13,13 @@ Tropix UI is a colorful and vibrant design system built with React, Typescript, 
 ## Getting started
 
 
-install the package
+### Installation
 
 ```shell
 npm i tropix-ui @emotion/react @emotion/styled
 ```
 
+### Usage
 
 import the provider into your root file
 
