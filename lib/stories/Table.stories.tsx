@@ -32,7 +32,7 @@ function App() {
     }
   })
   return (
-      <Table headers={['Id', 'User', 'Email', 'Phone', 'City']} height={350}>
+      <Table headers={['Id', 'User', 'Email', 'Phone']} height={350}>
       {
         mapedUsers.map(user => (
             <Table.Row key={user.id}>
@@ -40,7 +40,6 @@ function App() {
                 <Table.Cell label="Name">{user.name}</Table.Cell>
                 <Table.Cell label="Email">{user.email}</Table.Cell>
                 <Table.Cell label="Phone">{user.phone}</Table.Cell>
-                <Table.Cell label="City">{user.city}</Table.Cell>
             </Table.Row>
         ))
       }
@@ -64,7 +63,8 @@ function App2() {
 
   return (
     <Table 
-      headers={['Id', 'User', 'Email', 'Phone', 'City', 'Actions']}
+      headers={['Id', 'User', 'Email', 'Actions']}
+      height={350}
       >
       {
         mapedUsers.map((user, i) => (
@@ -77,8 +77,6 @@ function App2() {
                    </div>
                 </Table.Cell>
                 <Table.Cell label="Email">{user.email}</Table.Cell>
-                <Table.Cell label="Phone">{user.phone}</Table.Cell>
-                <Table.Cell label="City">{user.city}</Table.Cell>
                 <Table.Cell label="Actions">
                      <div
                           style={{ display: 'flex' }}
