@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.10.0...v1.11.0) (2025-06-23)
+
+
+### Features
+
+* **package.json:** remove module property ([4c2acf5](https://github.com/eduardo-talavera/tropix-ui/commit/4c2acf5ead59b365d5beb818007fb0a0b4411024))
+
 # [1.10.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.9.0...v1.10.0) (2025-06-23)
 
 
