@@ -33,6 +33,7 @@ const StyledAvatar = styled.div<{ size: AvatarSize, variant: AvatarVariants, the
   overflow: hidden;
   background-color: ${({ variant, theme, isDark }) => theme.colors[variant][isDark ? 9 : 11]  };
   font-size: ${({ size }) => (size === 'sm' ? '0.875rem' : size === 'md' ? '1rem' : '1.25rem')};
+  font-weight: 500;
   color: ${({ isDark, theme }) => isDark ? theme.colors.jet[20] : theme.colors.jet[0]};
   user-select: none;
 `;
