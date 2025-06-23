@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.13.0...v1.14.0) (2025-06-23)
+
+
+### Features
+
+* **package.json:** add type paths in imports ([6bf4d43](https://github.com/eduardo-talavera/tropix-ui/commit/6bf4d4399a2c9083f6518520fb1a273236364945))
+
 # [1.13.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.12.0...v1.13.0) (2025-06-23)
 
 

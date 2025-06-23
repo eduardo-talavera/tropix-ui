@@ -1,6 +1,6 @@
 {
   "name": "tropix-ui",
-  "version": "1.13.0",
+  "version": "1.14.0",
   "type": "module",
   "author": "Edgar Eduardo Talavera",
   "files": [
@@ -15,7 +15,7 @@
       "import": {
         "types": "./dist/types/main.d.ts",
         "default": "./dist/esm/main.js"
-    },
+      },
       "require": {
         "types": "./dist/types/main.d.ts",
         "default": "./dist/cjs/main.js"
