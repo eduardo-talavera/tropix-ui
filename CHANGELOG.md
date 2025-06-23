@@ -1,3 +1,15 @@
+# [1.15.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.14.0...v1.15.0) (2025-06-23)
+
+
+### Bug Fixes
+
+* **package.json:** fix unexpected token ([d42d237](https://github.com/eduardo-talavera/tropix-ui/commit/d42d237f0cafbaac0c8c10ac5c1d5355478ffccc))
+
+
+### Features
+
+* **vite.confif:** update vite config ([e523a8a](https://github.com/eduardo-talavera/tropix-ui/commit/e523a8a1e6b49ba907a7922eca853c74ae781808))
+
 # [1.14.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.13.0...v1.14.0) (2025-06-23)
 
 
