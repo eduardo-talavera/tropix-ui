@@ -57,27 +57,38 @@ export default defineConfig({
     },
   },
   build: {
-    rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
-      input: entries,
-      output: [
-        {
-          format: 'es',
-          dir: 'dist/esm',
-          entryFileNames: '[name].js',
-          assetFileNames: 'assets/[name][extname]',
-        },
-        {
-          format: 'cjs',
-          dir: 'dist/cjs',
-          entryFileNames: '[name].js',
-          assetFileNames: 'assets/[name][extname]',
-          exports: 'named',
-        },
-      ],
-    },
     sourcemap: true,
     outDir: 'dist',
     emptyOutDir: true,
+    rollupOptions: {
+      external: [
+        'react', 
+        'react-dom', 
+        'react/jsx-runtime',
+        /node_modules/
+      ],
+      preserveEntrySignatures: 'allow-extension',
+      input: entries,
+      output: [
+        {
+          format: 'esm',
+          dir: 'dist/esm',
+          entryFileNames: '[name].js',
+          assetFileNames: 'assets/[name][extname]',
+          preserveModules: true,
+          preserveModulesRoot: 'lib',
+          exports: 'named',
+        },
+        {
+          format: 'commonjs',
+          dir: 'dist/cjs',
+          entryFileNames: '[name].js',
+          assetFileNames: 'assets/[name][extname]',
+          preserveModules: true,
+          preserveModulesRoot: 'lib',
+          exports: 'named'
+        },
+      ],
+    }
   },
 })
