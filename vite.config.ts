@@ -20,7 +20,7 @@ export default defineConfig({
         'lib/**/*.test.tsx', 
         '**/lib/components/DataTable/**'
       ],
-      rollupTypes: true
+      //rollupTypes: true
     })
   ],
   resolve: {
