@@ -19,7 +19,19 @@ export type ButtonVariants = 'primary' | 'success' | 'warning' | 'danger' | 'gho
 
 
 const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>
-(({ children, variant = 'primary', disabled = false, outline = false, rounded, size = 'md', loader = false,  ...props }, ref) => {
+((
+  { 
+    children, 
+    variant = 'primary', 
+    disabled = false, 
+    outline = false, 
+    rounded, 
+    size = 'md', 
+    loader = false,  
+    ...props 
+  }, 
+  ref
+) => {
 
   const theme = useTheme()
   const styles = buttonStyles(theme, size)
