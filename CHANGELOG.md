@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.17.0...v2.0.0) (2025-06-23)
+
+
+### Features
+
+* **general:** move @emotion/react and @emotion/styled to peerDependencies ([1d296e8](https://github.com/eduardo-talavera/tropix-ui/commit/1d296e86923213dc1feb50806532f4d2008f10dd))
+
+
+### BREAKING CHANGES
+
+* **general:** move @emotion/react and @emotion/styled to peerDependencies
+
 # [1.17.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.16.0...v1.17.0) (2025-06-23)
 
 
