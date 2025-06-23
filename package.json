@@ -7,7 +7,6 @@
     "dist"
   ],
   "main": "./dist/main.js",
-  "module": "./dist/main.js",
   "types": "./dist/main.d.ts",
   "sideEffects": false,
   "exports": {
