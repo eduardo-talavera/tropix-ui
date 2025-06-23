@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.12.0...v1.13.0) (2025-06-23)
+
+
+### Features
+
+* **vite.config:** add commonjs support ([93fec72](https://github.com/eduardo-talavera/tropix-ui/commit/93fec72251bab7b628a5e30b8e92d77d03d481c0))
+
 # [1.12.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.11.0...v1.12.0) (2025-06-23)
 
 
