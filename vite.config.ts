@@ -47,7 +47,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'lib/main.ts'),
-      formats: ['es', 'cjs'],
+      formats: ['es'],
       name: 'tropix-ui',
       fileName: (format, entryName) => `my-lib-${entryName}.${format}.js`,
     },
