@@ -19,9 +19,9 @@ export default defineConfig({
         'lib/**/*.stories.tsx', 
         'lib/**/*.test.tsx', 
         '**/lib/components/DataTable/**'
-      ]
+      ],
+      //rollupTypes: true
     })
-    //dts({ rollupTypes: true })
   ],
   resolve: {
       alias: {

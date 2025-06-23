@@ -12,8 +12,8 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "import": "./dist/tropix-ui.js",
-      "require": "./dist/tropix-ui.umd.cjs"
+      "import": "./dist/main.js",
+      "require": "./dist/main.js"
     }
   },
   "license": "MIT",
