@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.8.1...v1.9.0) (2025-06-23)
+
+
+### Features
+
+* **vite.config:** update config for enable tree shaking ([4fbbe48](https://github.com/eduardo-talavera/tropix-ui/commit/4fbbe4858b6f0b31dfa3f736336b7c87e0089fd8))
+
 ## [1.8.1](https://github.com/eduardo-talavera/tropix-ui/compare/v1.8.0...v1.8.1) (2025-06-22)
 
 
