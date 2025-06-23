@@ -1,3 +1,11 @@
+# [1.10.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.9.0...v1.10.0) (2025-06-23)
+
+
+### Features
+
+* **vite.config:** disable dts rollup options ([380f1cf](https://github.com/eduardo-talavera/tropix-ui/commit/380f1cf4c8522fda7d6cc77c4646007e7d0b5a7f))
+* **vite.config:** enable dts rollup types ([97b2abd](https://github.com/eduardo-talavera/tropix-ui/commit/97b2abd57fda08d6fb5a805268e3ef8d425ef88b))
+
 # [1.9.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.8.1...v1.9.0) (2025-06-23)
 
 
