@@ -24,12 +24,13 @@
     "types": ["vitest/globals", "@testing-library/jest-dom"],
 
     // Paths
-    "baseUrl": "src",
+    "baseUrl": "lib",
     "paths": {
       "@/components/*": ["components/*"],
-      "@/utils/*": ["utils/*"],
-      "@/context/*": ["context/*"]
+      "@/context/*": ["context/*"],
+      "@/theme/*": ["theme/*"],
+      "@/utils/*": ["utils/*"]
     },
   },
-  "include": ["src"]
+  "include": ["lib"]
 }

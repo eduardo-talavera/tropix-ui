@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Toggle, type ToggleSizes, type ToggleVariants } from '../components/Toggle/Toggle';
+import { Toggle, type ToggleSizes, type ToggleVariants } from '@/components/Toggle/Toggle';
 import { ComponentProps } from "react";
 
 interface ExampleComponentProps extends ComponentProps<typeof Toggle> {

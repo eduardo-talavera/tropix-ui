@@ -2,10 +2,10 @@
 /** @jsxImportSource @emotion/react */
 import { Preview } from '@storybook/react';
 
-import { ThemeProvider, useThemeMode } from '../src/context/ThemeContext';
+import { ThemeProvider, useThemeMode } from '../lib/context/ThemeContext';
 import { css, Theme, useTheme } from '@emotion/react';
 import { useEffect, useState } from 'react';
-import { Toggle } from '../src/components/Toggle/Toggle';
+import { Toggle } from '../lib/components/Toggle/Toggle';
 
 const getScreenSizeHelper = (isDocs: boolean) =>  {
   if (isDocs) return {

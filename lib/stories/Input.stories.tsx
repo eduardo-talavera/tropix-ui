@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { Input, InputSize, Intent } from '../components/Input/Input';
+import { Input, InputSize, Intent } from '@/components/Input/Input';
 import { REG_EXS } from "../utils/regex";
 
 

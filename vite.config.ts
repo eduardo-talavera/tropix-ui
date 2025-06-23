@@ -1,8 +1,9 @@
 /// <reference types="vitest" />
 import { coverageConfigDefaults, defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
-import { dirname, resolve } from 'node:path'
+import { dirname, extname, relative, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { glob } from 'glob'
 import dts from 'vite-plugin-dts'
 
 
@@ -12,11 +13,19 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 export default defineConfig({
   plugins: [
     react(), 
-    dts({ rollupTypes: true })
+    dts({ 
+      include: 'lib',
+      exclude: [
+        'lib/**/*.stories.tsx', 
+        'lib/**/*.test.tsx', 
+        '**/lib/components/DataTable/**'
+      ]
+    })
+    //dts({ rollupTypes: true })
   ],
   resolve: {
       alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@': fileURLToPath(new URL('./lib', import.meta.url)),
     },
   },
   test: {
@@ -28,7 +37,7 @@ export default defineConfig({
           '**/storybook-static/**',
           '**/theme/**',
           '**/utils/**',
-          '**/src/components/DataTable/**',
+          '**/lib/components/DataTable/**',
           '**/*.stories.tsx',
           '**/*.styles.ts',
            ...coverageConfigDefaults.exclude
@@ -37,13 +46,31 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/main.ts'),
+      entry: resolve(__dirname, 'lib/main.ts'),
+      formats: ['es', 'cjs'],
       name: 'tropix-ui',
       fileName: 'tropix-ui',
     },
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime'],
+      input: Object.fromEntries(
+        glob
+          .sync('lib/**/*.{ts,tsx}', {
+            ignore: [
+              'lib/**/*.d.ts', 
+              'lib/**/*.stories.tsx', 
+              'lib/**/*.test.tsx',
+              '**/lib/components/DataTable/**'
+            ],
+          })
+          .map(file => [
+            relative('lib', file.slice(0, file.length - extname(file).length)),
+            fileURLToPath(new URL(file, import.meta.url)),
+      ]),
+    ),
       output: {
+        assetFileNames: 'assets/[name][extname]',
+        entryFileNames: '[name].js',
         globals: {
           react: 'React',
           'react-dom': 'ReactDom',

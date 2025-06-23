@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { ColorsPalette } from './ColorsPalette'
+import { ColorsPalette } from '@/theme/ColorsPalette'
 
 const meta: Meta<typeof ColorsPalette> = {
   title: "Theme/ColorsPalette",

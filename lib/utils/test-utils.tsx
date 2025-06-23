@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { ThemeProvider } from '../context/ThemeContext'
+import { ThemeProvider } from '@/context/ThemeContext'
 
 const TropixUiProvider = ({ children }: { children: React.ReactNode }) => {
   return (
