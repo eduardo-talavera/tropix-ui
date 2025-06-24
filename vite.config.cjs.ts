@@ -44,12 +44,8 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist/cjs',
-    lib: {
-      entry: resolve(__dirname, 'lib/main.ts'),
-      formats: ['cjs'],
-    },
     rollupOptions: {
-      //preserveEntrySignatures: 'allow-extension',
+      preserveEntrySignatures: 'allow-extension',
       input: entries,
       external: [
           'react', 
@@ -59,9 +55,9 @@ export default defineConfig({
           '@emotion/styled'
       ],
       output: {
-        //format: 'cjs',
-        // preserveModules: true,
-        // preserveModulesRoot: 'lib',
+        format: 'cjs',
+        preserveModules: true,
+        preserveModulesRoot: 'lib',
         entryFileNames: '[name].cjs',
         exports: 'named',
       },
