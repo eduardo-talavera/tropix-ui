@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/react */
+
 import { useTheme } from "@emotion/react"
 import { FC, forwardRef, HTMLAttributes, useEffect, useState } from "react"
 import { toggleStyles } from "./toggle.styles"

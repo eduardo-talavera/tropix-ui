@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 
 import { ReactNode } from 'react';
 import { useThemeMode } from '@/context/ThemeContext';

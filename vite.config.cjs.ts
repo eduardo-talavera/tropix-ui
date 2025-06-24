@@ -44,20 +44,25 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist/cjs',
+     lib: {
+      entry: resolve(__dirname, 'lib/main.ts'),
+      formats: ['cjs'],
+    },
     rollupOptions: {
-      preserveEntrySignatures: 'allow-extension',
+      //preserveEntrySignatures: 'exports-only',
       input: entries,
       external: [
           'react', 
           'react-dom', 
           'react/jsx-runtime',
           '@emotion/react',
-          '@emotion/styled'
+          '@emotion/styled',
+          '@emotion/react/jsx-runtime'
       ],
       output: {
-        format: 'cjs',
-        preserveModules: true,
-        preserveModulesRoot: 'lib',
+        //format: 'cjs',
+        // preserveModules: true,
+        // preserveModulesRoot: 'lib',
         entryFileNames: '[name].cjs',
         exports: 'named',
       },
