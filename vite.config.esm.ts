@@ -46,12 +46,8 @@ export default defineConfig({
     },
     build: {
       outDir: 'dist/esm',
-      lib: {
-        entry: resolve(__dirname, 'lib/main.ts'),
-        formats: ['es'],
-      },
       rollupOptions: {
-        //preserveEntrySignatures: 'allow-extension',
+        preserveEntrySignatures: 'allow-extension',
         input: entries,
         external: [
           'react', 
@@ -61,9 +57,9 @@ export default defineConfig({
           '@emotion/styled'
         ],
         output: {
-          //format: 'es',
-          // preserveModules: true,
-          // preserveModulesRoot: 'lib',
+          format: 'es',
+          preserveModules: true,
+          preserveModulesRoot: 'lib',
           entryFileNames: '[name].js',
         },
       },
