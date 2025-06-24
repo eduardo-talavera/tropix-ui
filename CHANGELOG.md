@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/eduardo-talavera/tropix-ui/compare/v2.0.0...v2.1.0) (2025-06-24)
+
+
+### Features
+
+* **build:** build optimization settings ([d2a9f11](https://github.com/eduardo-talavera/tropix-ui/commit/d2a9f110acfaf621827cd5eec8a839454fb14e7c))
+
 # [2.0.0](https://github.com/eduardo-talavera/tropix-ui/compare/v1.17.0...v2.0.0) (2025-06-23)
 
 
