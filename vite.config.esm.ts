@@ -17,6 +17,7 @@ const entries = Object.fromEntries(
       '**/*.stories.tsx',
       '**/*.test.tsx',
       '**/components/DataTable/**',
+      '**/utils/**'
     ],
   }).map(file => [
     relative('lib', file.slice(0, file.length - extname(file).length)),
@@ -50,6 +51,7 @@ export default defineConfig({
         formats: ['es'],
       },
       rollupOptions: {
+        //preserveEntrySignatures: 'allow-extension',
         input: entries,
         external: [
           'react', 
@@ -59,6 +61,9 @@ export default defineConfig({
           '@emotion/styled'
         ],
         output: {
+          //format: 'es',
+          // preserveModules: true,
+          // preserveModulesRoot: 'lib',
           entryFileNames: '[name].js',
         },
       },

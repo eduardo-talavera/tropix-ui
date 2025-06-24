@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import { ReactNode } from 'react';
-import { useThemeMode } from '../../main';
+import { useThemeMode } from '@/context/ThemeContext';
 import { CellWrapper, Label, RowWrapper, TableCard, TableHeader, TableWrapper } from './table.styles';
 
 type TableProps = { headers: string[]; children: ReactNode, height?: number };
