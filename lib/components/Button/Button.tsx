@@ -2,7 +2,7 @@
 import { FC, forwardRef, type ButtonHTMLAttributes } from 'react'
 import { useTheme } from '@emotion/react'
 import { buttonStyles, getBtnVariantStyles, getDisabledStyles } from './button.styles'
-import { useThemeMode } from '../../main'
+import { useThemeMode } from '@/context/ThemeContext'
 import { loaderStyles } from './loader.styles'
 
 

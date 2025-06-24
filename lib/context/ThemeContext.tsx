@@ -1,7 +1,7 @@
 // theme/ThemeProvider.tsx
 import { ThemeProvider as EmotionThemeProvider } from '@emotion/react';
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { darkTheme, lightTheme, type Theme } from '../theme/theme';
+import { darkTheme, lightTheme, type Theme } from '@/theme/theme';
 
 interface ThemeContextType {
   theme: Theme;
