@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/eduardo-talavera/tropix-ui/compare/v2.1.0...v2.2.0) (2025-06-24)
+
+
+### Features
+
+* **config:** update vite config ([c4221b5](https://github.com/eduardo-talavera/tropix-ui/commit/c4221b5f52834343ede9e6b255efa48247187c5a))
+
 # [2.1.0](https://github.com/eduardo-talavera/tropix-ui/compare/v2.0.0...v2.1.0) (2025-06-24)
 
 
