@@ -46,20 +46,25 @@ export default defineConfig({
     },
     build: {
       outDir: 'dist/esm',
+      lib: {
+        entry: resolve(__dirname, 'lib/main.ts'),
+        formats: ['es'],
+      },
       rollupOptions: {
-        preserveEntrySignatures: 'allow-extension',
+        //preserveEntrySignatures: 'exports-only',
         input: entries,
         external: [
           'react', 
           'react-dom', 
           'react/jsx-runtime',
           '@emotion/react',
-          '@emotion/styled'
+          '@emotion/styled',
+          '@emotion/react/jsx-runtime'
         ],
         output: {
-          format: 'es',
-          preserveModules: true,
-          preserveModulesRoot: 'lib',
+          //format: 'es',
+          // preserveModules: true,
+          // preserveModulesRoot: 'lib',
           entryFileNames: '[name].js',
         },
       },

@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/react */
+
 import { useTheme } from '@emotion/react'
 import { inputStyles } from './input.styles'
 import {
