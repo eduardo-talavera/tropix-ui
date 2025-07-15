@@ -73,6 +73,6 @@ export const App = () => {
 
 ## Documentation
 
-Visit [Tropix Ui Docs](https://tropix-ui-docs.vercel.app/docs/intro/).
+Visit [Tropix Ui Docs](https://tropix-ui-docs.vercel.app/docs/getting-started/).
 
 
