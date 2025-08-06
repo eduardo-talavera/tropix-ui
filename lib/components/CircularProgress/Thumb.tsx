@@ -1,3 +1,4 @@
+'use client';
 
 import { useThemeMode } from '@/context/ThemeContext';
 import { sizePropertyVariants, useProgress } from "./Container";

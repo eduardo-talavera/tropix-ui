@@ -1,3 +1,4 @@
+'use client';
 
 import { useTheme } from '@emotion/react'
 import { inputStyles } from './input.styles'
