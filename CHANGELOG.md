@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/eduardo-talavera/tropix-ui/compare/v2.3.0...v2.4.0) (2025-08-06)
+
+
+### Features
+
+* **circularprogress:** circularProgress component added ([d3614ae](https://github.com/eduardo-talavera/tropix-ui/commit/d3614aeb7d023f5b15e384baddf9f0136441cd6c))
+
 # [2.3.0](https://github.com/eduardo-talavera/tropix-ui/compare/v2.2.0...v2.3.0) (2025-06-24)
 
 
