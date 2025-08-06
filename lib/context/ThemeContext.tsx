@@ -1,3 +1,5 @@
+'use client';
+
 // theme/ThemeProvider.tsx
 import { ThemeProvider as EmotionThemeProvider } from '@emotion/react';
 import React, { createContext, useContext, useEffect, useState } from 'react';
