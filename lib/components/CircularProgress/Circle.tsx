@@ -10,7 +10,7 @@ export const Circle: React.FC<{ enableTransition?: boolean }> = ({ enableTransit
   const radius = sizePropertyVariants[size].radius;
   const stroke = 25;
   const normalizedRadius = radius - stroke / 2;
-  const circumference = (normalizedRadius * 2 * Math.PI) + 5;
+  const circumference = (normalizedRadius * 2 * Math.PI);
   const strokeDashoffset =
     circumference - (value / max) * circumference;
 
@@ -37,6 +37,9 @@ export const Circle: React.FC<{ enableTransition?: boolean }> = ({ enableTransit
         r={normalizedRadius}
         cx={radius}
         cy={radius}
+        style={{
+          transition: 'stroke 1s ease-in-out'
+        }}
       />
       <circle
         stroke={`url(#gradient-${id})`}
@@ -46,7 +49,7 @@ export const Circle: React.FC<{ enableTransition?: boolean }> = ({ enableTransit
         strokeDasharray={`${circumference} ${circumference}`}
         style={{
           strokeDashoffset,
-          transition: enableTransition ? 'stroke-dashoffset 0.3s ease-out' : undefined,
+          transition: enableTransition ? 'stroke-dashoffset 1s ease-out' : undefined,
           transform: 'rotate(-90deg)',
           transformOrigin: '50% 50%',
           filter: `url(#shadow-${id})`
@@ -62,7 +65,7 @@ export const Circle: React.FC<{ enableTransition?: boolean }> = ({ enableTransit
         </linearGradient>
 
         <filter id={`shadow-${id}`} colorInterpolationFilters="sRGB">
-          <feDropShadow dx="2" dy="2" stdDeviation="3" floodColor={theme.colors.text} floodOpacity="0.5"/>
+          <feDropShadow dx="0" dy="2" stdDeviation="2" floodColor={theme.colors.text} floodOpacity="0.25"/>
         </filter>
       </defs>
     </svg>

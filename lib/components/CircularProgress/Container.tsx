@@ -1,7 +1,7 @@
 'use client';
 
 import { css } from "@emotion/react";
-import { createContext, ReactElement, useContext, useState } from "react";
+import { createContext, ReactElement, useContext, useEffect, useState } from "react";
 
 
 interface ProgressContextType {
@@ -51,6 +51,10 @@ export const Container = ({
   const [value, setValue] = useState<number>(initialValue);
   const [max] = useState<number>(100);
   const update = (val: number) => setValue(Math.max(0, Math.min(max, val)));
+
+  useEffect(() => {
+    setValue(initialValue);
+  }, [initialValue])
 
   return (
     <ProgressContext.Provider value={{ value, max, update, size, progressColors }}>
