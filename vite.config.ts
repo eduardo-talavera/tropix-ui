@@ -26,6 +26,7 @@ export default defineConfig({
           '**/theme/**',
           '**/utils/**',
           '**/lib/components/DataTable/**',
+          '**/lib/main.ts',
           '**/*.stories.tsx',
           '**/*.styles.ts',
           '**/*.d.ts'

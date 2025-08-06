@@ -1,5 +1,5 @@
 import { screen, fireEvent } from '@testing-library/react';
-import { render } from '@/utils/test-utils';
+import { render } from '@/utils/test-utils/renderWithTheme';
 import { describe, it, expect, vi } from 'vitest';
 import { Input } from '@/components/Input/Input';
 
