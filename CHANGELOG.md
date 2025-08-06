@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/eduardo-talavera/tropix-ui/compare/v2.7.0...v2.8.0) (2025-08-06)
+
+
+### Features
+
+* **circle and label:** add animations ([0778bf8](https://github.com/eduardo-talavera/tropix-ui/commit/0778bf82b94ef7ffbb0f0dda7e9e95c33ff38eb5))
+
 # [2.7.0](https://github.com/eduardo-talavera/tropix-ui/compare/v2.6.0...v2.7.0) (2025-08-06)
 
 
