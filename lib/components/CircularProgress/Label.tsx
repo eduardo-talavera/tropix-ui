@@ -1,3 +1,5 @@
+'use client';
+
 import { useTheme, css } from "@emotion/react";
 import { useProgress } from "./Container";
 

@@ -1,3 +1,5 @@
+'use client';
+
 import { useTheme } from "@emotion/react";
 import { sizePropertyVariants, useProgress } from "./Container";
 import { useThemeMode } from '@/context/ThemeContext';

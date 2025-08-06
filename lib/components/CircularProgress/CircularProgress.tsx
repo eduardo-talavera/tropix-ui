@@ -1,3 +1,5 @@
+'use client';
+
 import { Container, ContainerProps } from './Container';
 import { Circle } from './Circle';
 import { Thumb } from './Thumb';

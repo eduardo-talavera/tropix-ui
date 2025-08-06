@@ -1,3 +1,4 @@
+'use client';
 
 import { useTheme } from "@emotion/react"
 import { FC, forwardRef, HTMLAttributes, useEffect, useState } from "react"

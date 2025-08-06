@@ -1,3 +1,4 @@
+'use client';
 
 import { FC, forwardRef, type ButtonHTMLAttributes } from 'react'
 import { useTheme } from '@emotion/react'

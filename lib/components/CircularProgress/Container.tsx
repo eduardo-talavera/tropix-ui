@@ -1,3 +1,5 @@
+'use client';
+
 import { css } from "@emotion/react";
 import { createContext, ReactElement, useContext, useState } from "react";
 
