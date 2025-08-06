@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { render } from '@/utils/test-utils';
+import { render } from '@/utils/test-utils/renderWithTheme';
 import { describe, it, expect } from 'vitest';
 import { Table } from '@/components/Table/Table';
 
