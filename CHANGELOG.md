@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/eduardo-talavera/tropix-ui/compare/v2.5.0...v2.6.0) (2025-08-06)
+
+
+### Features
+
+* **theme context:** add next suport in theme context ([91ad3a2](https://github.com/eduardo-talavera/tropix-ui/commit/91ad3a29fb4f4ed9a0371aee4d5fc48bd7574268))
+
 # [2.5.0](https://github.com/eduardo-talavera/tropix-ui/compare/v2.4.0...v2.5.0) (2025-08-06)
 
 
