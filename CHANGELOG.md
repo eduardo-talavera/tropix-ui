@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/eduardo-talavera/tropix-ui/compare/v2.4.0...v2.5.0) (2025-08-06)
+
+
+### Features
+
+* **next support:** next support added ([11f6531](https://github.com/eduardo-talavera/tropix-ui/commit/11f6531aa7ed2f8f8048611c2148a9a82dc0dfc1))
+
 # [2.4.0](https://github.com/eduardo-talavera/tropix-ui/compare/v2.3.0...v2.4.0) (2025-08-06)
 
 
